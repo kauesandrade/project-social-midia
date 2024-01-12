@@ -1,8 +1,8 @@
 import './style.css'
-import { FaHouse } from "react-icons/fa6";
-import { FaHashtag } from "react-icons/fa";
-import { FaCommentAlt } from "react-icons/fa";
-import { IoPersonSharp } from "react-icons/io5";
+import { PiHouse } from "react-icons/pi";
+import { GoHash } from "react-icons/go";
+import { FaRegCommentAlt } from "react-icons/fa";
+import { IoPersonOutline } from "react-icons/io5";
 import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 
@@ -26,10 +26,10 @@ const sidebar = () => {
         <aside className='asideSidebar'>
             <ul>
                 <li><span className='spanPhoto' onClick={() =>navigate('/profile')}><img src="src/assets/imagens/profile.jpg" alt="Profile Photo" /></span></li>
-                <li><span onClick={() =>navigate('/')}><FaHouse style={{fontSize: '1.5rem'}} /><a id='home'>Home</a></span></li>
-                <li><span onClick={() =>navigate('/explore')}><FaHashtag style={{ fontSize: '1.5rem' }} /><a id='explore'>Explore</a></span></li>
-                <li><span onClick={() =>navigate('/menssages')}><FaCommentAlt style={{ fontSize: '1.5rem' }} /><a id='menssages'>Menssages</a></span></li>
-                <li><span onClick={() =>navigate('/profile')}><IoPersonSharp style={{fontSize: '1.5rem'}} /><a id='profile'>Profile</a></span></li>
+                <li><span onClick={() =>navigate('/')}><PiHouse style={{fontSize: '1.5rem'}} /><a id='home'>Home</a></span></li>
+                <li><span onClick={() =>navigate('/explore')}><GoHash style={{ fontSize: '1.5rem' }} /><a id='explore'>Explore</a></span></li>
+                <li><span onClick={() =>navigate('/menssages')}><FaRegCommentAlt style={{ fontSize: '1.5rem' }} /><a id='menssages'>Menssages</a></span></li>
+                <li><span onClick={() =>navigate('/profile')}><IoPersonOutline style={{fontSize: '1.5rem'}} /><a id='profile'>Profile</a></span></li>
             </ul>
         </aside>
 
@@ -46,10 +46,10 @@ const sidebar = () => {
         <nav className='navBarShow'>
             <ul>
                 <li><span onClick={() =>handleClickMenu()}><IoClose style={{fontSize: '2.5rem'}} /></span></li>
-                <li><span onClick={() =>{handleClickMenu(); navigate('/')}}><FaHouse style={{fontSize: '1.5rem'}} /><a id='home'>Home</a></span></li>
-                <li><span onClick={() =>{handleClickMenu(); navigate('/explore')}}><FaHashtag style={{ fontSize: '1.5rem' }} /><a id='explore'>Explore</a></span></li>
-                <li><span onClick={() =>{handleClickMenu(); navigate('/menssages')}}><FaCommentAlt style={{ fontSize: '1.5rem' }} /><a id='menssages'>Menssages</a></span></li>
-                <li><span onClick={() =>{handleClickMenu(); navigate('/profile')}}><IoPersonSharp style={{fontSize: '1.5rem'}} /><a id='profile'>Profile</a></span></li>
+                <li><span onClick={() =>{handleClickMenu(); navigate('/')}}><PiHouse style={{fontSize: '1.5rem'}} /><a id='home'>Home</a></span></li>
+                <li><span onClick={() =>{handleClickMenu(); navigate('/explore')}}><GoHash style={{ fontSize: '1.5rem' }} /><a id='explore'>Explore</a></span></li>
+                <li><span onClick={() =>{handleClickMenu(); navigate('/menssages')}}><FaRegCommentAlt style={{ fontSize: '1.5rem' }} /><a id='menssages'>Menssages</a></span></li>
+                <li><span onClick={() =>{handleClickMenu(); navigate('/profile')}}><IoPersonOutline style={{fontSize: '1.5rem'}} /><a id='profile'>Profile</a></span></li>
             </ul>
 
             {/* <span onClick={() =>handleClickMenu()}><IoClose style={{fontSize: '1.5rem'}} /></span>
