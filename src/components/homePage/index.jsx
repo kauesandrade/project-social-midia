@@ -1,16 +1,17 @@
 import './style.css'
+
 import Sidebar from '../sidebar/index'
-import { useEffect } from 'react';
+import Post from '../post/index'
 
-const homePage = () =>{
+const homePage = () => {
 
-    return(
-        <> 
-            <Sidebar /> 
+    return (
+        <>
+            <Sidebar />
             <main className='mainHomePage'>
-                <h1>Bem vindo, Home</h1>
+                <Post />
             </main>
-            
+
         </>
     )
 }
