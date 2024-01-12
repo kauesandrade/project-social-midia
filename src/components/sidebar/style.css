@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black-50p: #010101de;
+    --black: #010101;
+    --white: #fefefe;
+    --gray: #2F3336;
+    --light-gray: #E5E5E5;
+}
+
+h1 {
+    color: aqua;
+}
+
+.asideSidebar {
+    padding: 2rem 0;
+    background-color: var(--black);
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    border-right: solid 2px var(--gray);
+}
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: initial;
+
+    width: 100%;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    color: var(--white);
+}
+
+span {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    transition: background-color 0.5s;
+}
+
+.spanPhoto {
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+span:hover {
+    background-color: var(--gray);
+}
+
+img {
+    width: 2.5rem;
+    border-radius: 3rem;
+}
+
+.navBarMenu {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    padding: 10px 20px;
+    display: none;
+    align-items: center;
+    background-color: var(--black);
+    font-family: 'Rubik', sans-serif;
+    color: var(--white);
+    border-bottom: solid 2px var(--gray);
+    gap: 2rem;
+}
+
+.navBarShow{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    padding: 4rem 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--black);
+    font-family: 'Rubik', sans-serif;
+    color: var(--white);
+    border-bottom: solid 2px var(--gray);
+    gap: 2rem;
+}
+
+.aMenu {
+    display: flex;
+    font-size: large;
+    font-weight: 600;
+}
+
+
+
+@media screen and (max-width: 1500px) {
+
+    a {
+        display: none;
+    }
+
+    span {
+        padding: 0.5rem;
+        border-radius: 2rem;
+    }
+
+    .asideSidebar {
+        width: 120px;
+    }
+
+    li {
+        justify-content: center;
+        gap: 0;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .asideSidebar {
+        display: none;
+    }
+    .navBarMenu {
+        display: flex;
+    }
+
+    .navBarShow{
+        display: flex;
+    }
+
+    a{
+        display: flex;
+    }
+
+}
