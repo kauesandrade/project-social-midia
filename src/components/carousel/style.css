@@ -6,9 +6,8 @@
     text-align: center;
     border-radius: 0.4rem;
     font-size: 18px;
-    background: var(--white);
+    /* background: var(--white); */
 
-    /* Center slide text vertically---- */
     display: flex;
     justify-content: center;
     align-items: center;

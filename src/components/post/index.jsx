@@ -36,7 +36,7 @@ const post = (props) => {
         isSave ? setIsSave(false) : setIsSave(true);
     }
 
-    const [commentsCount, setCommentsCount] = useState(props.commnetCount);
+    const [commentsCount, setCommentsCount] = useState(props.commentsCount);
     const [isShowButtonShare, setIsShowButtonShare] = useState(false);
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState([]);
@@ -46,7 +46,7 @@ const post = (props) => {
         setComment(event.target.value);
     }
 
-    const handleClickComment = (comment) => {
+    const handleClickComment = (comment, commentsCount) => {
         const commentData = {
             name: "kaue", // ========ALTERAR PARA O NOME DA PESSOA QUE ESTIVER UTILIZANDO A PAGINA========
             comment: comment
@@ -55,6 +55,7 @@ const post = (props) => {
         setComment('');
         setIsShowButtonShare(false)
         setCommentsCount(commentsCount+1);
+        console.log(commentsCount)
     }
 
     const postComments = comments.map((comment, key) => <p key={key}><span className='spanUsernamePost'>{comment.name}</span> {comment.comment}</p>);
@@ -115,7 +116,7 @@ const post = (props) => {
                     </div>
 
                     <div>
-                        <p>See all of {commentsCount} comments</p>
+                        <p className='pCommentsCount'>See all of {commentsCount} comments</p>
                     </div>
 
                     <div className='divDescriptionPost'>
@@ -126,7 +127,7 @@ const post = (props) => {
                 <div className='divCommentInputPost'>
                     <input className='inputCommentPost' type='text' placeholder='Add a comment...' onChange={handleChangeComment} value={comment}></input>
                     {isShowButtonShare && (
-                        <button className='buttonShareCommentPost' onClick={() => handleClickComment(comment)}>Share</button>
+                        <button className='buttonShareCommentPost' onClick={() => handleClickComment(comment, commentsCount)}>Share</button>
                     )}
                 </div>
             </section>

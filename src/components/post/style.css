@@ -4,12 +4,15 @@
     --black: #010101;
     --white: #fefefe;
     --gray: #2F3336;
+    --gray-2: #808080;
     --light-gray: #E5E5E5;
+    --blue-verify: #2c8ddd;
+    --blue: #0ecfe9;
 }
 
 article{
     position: relative;
-    background-color: var(--gray); 
+    /* background-color: var(--gray);  */
     width: 400px;
     display: flex;
     align-items: center;
@@ -17,6 +20,7 @@ article{
     gap: 0.5rem;
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
+    color: var(--white);
     border-bottom: solid 2px var(--gray);
 }
 
@@ -62,13 +66,13 @@ section{
 }
 
 .iconVerify{
-    color: rgb(44, 141, 221);
+    color: var(--blue-verify);
 }
 
 .divTimePost{
     display: flex;
     align-items: center;
-    color: grey;
+    color: var(--gray-2);
     gap: 0.3rem;
 }
 
@@ -92,7 +96,7 @@ section{
 
 .iconsPost{
     font-size: 1.5rem;
-    color: var(--white);
+    
 }
 
 .divLikeCounter{
@@ -105,7 +109,6 @@ section{
     display: flex;
     margin: 0;
     font-size: 18px;
-    color: var(--white);
 }
 
 .divDescriptionPost{
@@ -117,11 +120,14 @@ section{
     font-weight: bold;
 }
 
+.pCommentsCount{
+    color: var(--gray-2);
+}
+
 .divCommentInputPost{
     display: flex;
     justify-content: space-between;
 }
-
 
 .inputCommentPost{
     background-color: var(--black);
@@ -136,7 +142,7 @@ section{
     border: 0;
     background: none;
     font-size: 14px;
-    color: powderblue;
+    color: var(--blue);
     font-family: 'Rubik', sans-serif;
 }
 
