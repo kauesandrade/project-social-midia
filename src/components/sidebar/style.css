@@ -70,12 +70,11 @@
 }
 
 .navBarMenu {
-    height: 60px;
-    width: 100%;
-    left: 0;
+    overflow: hidden;
     position: fixed;
     top: 0;
-    right: 0;
+    height: 60px;
+    width: 100%;
     padding: 10px 20px;
     display: none;
     align-items: center;

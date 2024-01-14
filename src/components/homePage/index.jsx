@@ -32,7 +32,7 @@ const homePage = () => {
 
     ]
 
-    const posts = postsData.map((post, key)=> <Post 
+    const posts = postsData.map((post, key)=> <Post key={key}
     profilePhoto= {post.profilePhoto}
     username={post.username}
     timePost={post.timePost}
@@ -48,9 +48,7 @@ const homePage = () => {
             <Sidebar />
             <main className='mainHomePage'>
 
-
                 {posts}
-
 
                 {/* <Post
                     profilePhoto='src/assets/imagens/profile.jpg'
@@ -60,37 +58,7 @@ const homePage = () => {
                     commentsCount={10}
                     description='eeee'
                     srcPhotos={['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']}
-                />
-
-                <Post
-                    profilePhoto='src/assets/imagens/profile.jpg'
-                    username='Kauesandrade'
-                    timePost='19m'
-                    likes={109}
-                    commentsCount={10}
-                    description='eeee'
-                    srcPhotos={['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']}
-                />
-
-                <Post
-                    profilePhoto='src/assets/imagens/profile.jpg'
-                    username='Kauesandrade'
-                    timePost='19m'
-                    likes={109}
-                    commentsCount={10}
-                    description='eeee'
-                    srcPhotos={['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']}
-                />
-
-                <Post
-                    profilePhoto='src/assets/imagens/profile.jpg'
-                    username='Kauesandrade'
-                    timePost='19m'
-                    likes={109}
-                    commentsCount={10}
-                    description='eeee'
-                    srcPhotos={['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']}
-                /> */}
+                />  */}
 
             </main>
             
