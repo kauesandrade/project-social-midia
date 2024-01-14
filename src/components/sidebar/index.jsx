@@ -21,6 +21,7 @@ const sidebar = () => {
     }
 
     // ====================FAZER UM COMPONENT PARA OS LI===========================
+    // ====================FAZER UMA TEXTURA QUANDO ESTIVER NA PAGINA SELECIONADA===========================
 
 
     return (
@@ -32,6 +33,7 @@ const sidebar = () => {
                             <img className='imgNav' src="src/assets/imagens/profile.jpg" alt="Profile Photo" />
                         </span>
                     </li>
+                    {/* <li className='liNavBarI'> */}
                     <li className='liNavBar'>
                         <span className='spanIconNav' onClick={() => navigate('/')}>
                             <PiHouse className='iconsNav' />

@@ -36,6 +36,15 @@
     padding: 1rem 2rem;
     color: var(--white);
 }
+/* .liNavBarI {
+    display: flex;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    gap: 1rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: var(--white);
+} */
 
 .spanIconNav {
     display: flex;
