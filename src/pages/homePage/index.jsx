@@ -1,7 +1,7 @@
 import './style.css'
 
-import Sidebar from '../sidebar/index'
-import Post from '../post/index'
+import Sidebar from '../../components/sidebar'
+import Post from '../../components/post'
 
 const homePage = () => {
 

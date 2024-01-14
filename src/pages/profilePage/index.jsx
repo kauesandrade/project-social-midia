@@ -1,14 +1,8 @@
 import './style.css'
-import Sidebar from '../sidebar/index'
-
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
-
-
+import Sidebar from '../../components/sidebar'
 
 const profilePage = () => {
 
-    // const swiper = new Swiper(...);
     return (
         <>
             <Sidebar />

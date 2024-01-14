@@ -5,33 +5,16 @@
     --light-gray: #E5E5E5;
 }
 
-/* .mainHomePage {
+.mainExplorePage {
     display: flex;
-    padding: 3rem 0;
-    gap: 3rem;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    justify-content: center;
-    position: relative;
-    right: 0%;
-    margin-left: 15%;
     height: auto;
-    background-color: var(--black);
-} */
-
-.mainHomePage {
-    display: flex;
+    min-height: 100vh;
     padding: 3rem 0;
     gap: 3rem;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    /* position: relative; */
-    right: 0%;
     margin-left: 15%;
-    height: auto;
     background-color: var(--black);
 }
 
@@ -40,7 +23,7 @@ h1 {
 }
 
 @media screen and (max-width: 1500px) {
-    .mainHomePage {
+    .mainExplorePage {
         margin-left: 120px;
     }
 
@@ -49,8 +32,7 @@ h1 {
 
 @media screen and (max-width: 770px) {
 
-    .mainHomePage {
+    .mainExplorePage {
         margin: 80px 0 0 0;
     }
-
 }

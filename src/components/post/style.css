@@ -129,7 +129,7 @@ section{
 }
 
 .inputCommentPost{
-    background-color: var(--black);
+    background-color: transparent;
     border: 0;
     width: 100%;
     font-size: 14px;
