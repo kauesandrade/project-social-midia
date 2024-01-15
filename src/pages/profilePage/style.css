@@ -39,8 +39,10 @@
 
 .sectionProfileInformations{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
+    gap: 3rem;
 }
 
 .divInformationImage{
@@ -51,6 +53,8 @@
 .imgProfile{
     width: 10rem;
     border-radius: 50%;
+    padding: 0.3rem;
+    outline: solid var(--gray-2) 1px;
 }
 
 .divInformations{
@@ -94,6 +98,13 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+}
+
+.divHighlights{
+    display: flex;
+    align-items: start;
+    width: 50%;
+    gap: 3rem;
 }
 
 

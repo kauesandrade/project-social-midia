@@ -7,18 +7,15 @@
 
 .mainExplorePage {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     height: auto;
     min-height: 100vh;
     margin-left: 15%;
     padding: 3rem 0;
     background-color: var(--black);
-}
 
-h1 {
     color: var(--white);
 }
 
@@ -26,7 +23,6 @@ h1 {
     .mainExplorePage {
         margin-left: 120px;
     }
-
 
 }
 

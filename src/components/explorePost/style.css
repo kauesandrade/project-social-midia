@@ -1,36 +1,15 @@
-.divExplorePoste{
+.divExplorePost{
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
+    width: 100%;
     gap: 0.2rem;
 }
-.divExplorePost{
+.divPosts{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.2rem;
-}
-
-.cu{
-    width: 300px;
-    height: 300px;
-}
-
-@media screen and (max-width: 1050px) {
-
-
-    .divExplorePoste{
-        width: 80%;
-    }
-    .divExplorePost {
-        /* display:flex ; */
-        width: 100%;
-        /* height: 100%; */
-    }
-
-    .cu{
-        width: 30%;
-        height: 100%;
-    }
 }

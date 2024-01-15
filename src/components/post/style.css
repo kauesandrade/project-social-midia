@@ -22,6 +22,7 @@ article{
     align-items: center;
     flex-direction: column;
     gap: 0.5rem;
+    padding-bottom: 1rem;
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     color: var(--white);
@@ -29,7 +30,7 @@ article{
 }
 
 .sectionProfilePost{
-    width: 95%;
+    width: 100%;
     justify-content: space-between;
     font-family: 'Rubik', sans-serif;
     color: var(--white);
@@ -66,7 +67,7 @@ article{
 
 
 .sectionDescription{
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction:column;
     gap: 0.5rem;
@@ -126,6 +127,11 @@ p{
     font-family: 'Rubik', sans-serif;
 }
 
+input:focus{
+    border: 0;
+    outline: 0;
+}
+
 .buttonShareCommentPost{
     border: 0;
     background: none;
@@ -138,6 +144,14 @@ p{
 
     article{
         width: 100%;
+    }
+
+    .sectionDescription{
+        width: 95%;
+    }
+
+    .sectionProfilePost{
+        width: 95%;
     }
 
 }

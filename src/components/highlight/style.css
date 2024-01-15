@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black: #010101;
+    --white: #fefefe;
+    --gray: #2F3336;
+    --gray-2: #808080;
+    --light-gray: #E5E5E5;
+    --blue-verify: #2c8ddd;
+    --blue: #0ecfe9;
+}
+
+.divHighlight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imgHighlight{
+    width: 5rem;
+    border-radius: 50%;
+    padding: 0.2rem;
+    outline: solid var(--gray-2) 1px;
+}
+
+.divHighlightName{
+    display: flex;
+    justify-content: center;
+}

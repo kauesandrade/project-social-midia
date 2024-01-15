@@ -1,5 +1,9 @@
 import './style.css'
 import Sidebar from '../../components/sidebar'
+import Highlight from '../../components/highlight';
+import Highlights from '../../components/highlights';
+
+import Flicking from "@egjs/react-flicking";
 
 import { PiSealCheckDuotone } from "react-icons/pi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
@@ -28,7 +32,7 @@ const profilePage = () => {
                                     {isVerify && (
                                         <PiSealCheckDuotone className='iconVerify' />
                                     )}
-                                    
+
                                 </div>
                                 <div className='divButtons'>
                                     <button className='buttonsProfile'> Seguir </button>
@@ -58,8 +62,8 @@ const profilePage = () => {
                             {/* informacoes */}
                         </div>
                     </div>
-                    <div>
-                        {/* destaques */}
+                    <div className='divHighlights'>
+                        <Highlights />
                     </div>
                 </section>
                 <section>
