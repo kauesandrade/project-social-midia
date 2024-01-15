@@ -9,19 +9,8 @@ const explorePage = () =>{
         <>
             <Sidebar />
             <main className='mainExplorePage'>
-
-
                 <ExplorePost />
-
-
-                <Carousel srcPhotos={['src/assets/imagens/img1.jpeg', 
-        'src/assets/imagens/img2.jpeg', 
-        'src/assets/imagens/img3.jpeg', 
-        'src/assets/imagens/img4.jpeg', 
-        'src/assets/imagens/img5.jpeg', 
-        'src/assets/imagens/img6.jpeg', 
-        'src/assets/imagens/img7.jpeg', 
-        'src/assets/imagens/img8.jpeg']} />
+                <ExplorePost />
             </main>
         </>
     )

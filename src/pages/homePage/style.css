@@ -18,10 +18,6 @@
     background-color: var(--black);
 }
 
-h1 {
-    color: var(--white);
-}
-
 @media screen and (max-width: 1500px) {
     .mainHomePage {
         margin-left: 120px;

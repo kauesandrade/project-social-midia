@@ -16,7 +16,6 @@ const sidebar = () => {
     const [isShowMenuBar, setIsShowMenuBar] = useState(true);
 
     const handleClickMenu = () => {
-        isShowMenuBar == false ? setIsShowMenuBar(true) : setIsShowMenuBar(false);
         isShowMenu == false ? setIsShowMenu(true) : setIsShowMenu(false);
     }
 
@@ -61,12 +60,10 @@ const sidebar = () => {
                 </ul>
             </aside>
 
-            {isShowMenuBar && (
                 <nav className='navBarMenu'>
                     <IoIosMenu onClick={() => handleClickMenu()} style={{ fontSize: '3rem' }} />
                     <a className='aMenu'>Menu</a>
                 </nav>
-            )}
 
             {isShowMenu && (
                 <nav className='navBarShow'>

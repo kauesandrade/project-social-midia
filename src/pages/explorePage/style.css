@@ -8,13 +8,13 @@
 .mainExplorePage {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
     min-height: 100vh;
-    padding: 3rem 0;
-    gap: 3rem;
     margin-left: 15%;
+    padding: 3rem 0;
     background-color: var(--black);
 }
 

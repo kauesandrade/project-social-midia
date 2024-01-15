@@ -1,10 +1,81 @@
 import './style.css'
+import Carousel from '../carousel';
 
-const explorePost = () =>{
+const explorePost = () => {
 
-    return(
+    return (
         <>
-        
+            <div className='divExplorePoste'>
+                <div className='divExplorePost'>
+                    <div className='cu'>
+                        <Carousel srcPhotos={['src/assets/imagens/img1.jpeg',
+                            'src/assets/imagens/img2.jpeg',
+                            'src/assets/imagens/img3.jpeg',
+                            'src/assets/imagens/img4.jpeg',
+                            'src/assets/imagens/img5.jpeg',
+                            'src/assets/imagens/img6.jpeg',
+                            'src/assets/imagens/img7.jpeg',
+                            'src/assets/imagens/img8.jpeg']} />
+                    </div>
+                    <div className='cu'>
+                        <Carousel srcPhotos={['src/assets/imagens/img1.jpeg',
+                            'src/assets/imagens/img2.jpeg',
+                            'src/assets/imagens/img3.jpeg',
+                            'src/assets/imagens/img4.jpeg',
+                            'src/assets/imagens/img5.jpeg',
+                            'src/assets/imagens/img6.jpeg',
+                            'src/assets/imagens/img7.jpeg',
+                            'src/assets/imagens/img8.jpeg']} />
+                    </div>
+                    <div className='cu'>
+                        <Carousel srcPhotos={['src/assets/imagens/img1.jpeg',
+                            'src/assets/imagens/img2.jpeg',
+                            'src/assets/imagens/img3.jpeg',
+                            'src/assets/imagens/img4.jpeg',
+                            'src/assets/imagens/img5.jpeg',
+                            'src/assets/imagens/img6.jpeg',
+                            'src/assets/imagens/img7.jpeg',
+                            'src/assets/imagens/img8.jpeg']} />
+                    </div>
+
+
+                </div>
+                <div className='divExplorePost'>
+                    <div className='cu'>
+                        <Carousel srcPhotos={['src/assets/imagens/img1.jpeg',
+                            'src/assets/imagens/img2.jpeg',
+                            'src/assets/imagens/img3.jpeg',
+                            'src/assets/imagens/img4.jpeg',
+                            'src/assets/imagens/img5.jpeg',
+                            'src/assets/imagens/img6.jpeg',
+                            'src/assets/imagens/img7.jpeg',
+                            'src/assets/imagens/img8.jpeg']} />
+                    </div>
+                    <div className='cu'>
+                        <Carousel srcPhotos={['src/assets/imagens/img1.jpeg',
+                            'src/assets/imagens/img2.jpeg',
+                            'src/assets/imagens/img3.jpeg',
+                            'src/assets/imagens/img4.jpeg',
+                            'src/assets/imagens/img5.jpeg',
+                            'src/assets/imagens/img6.jpeg',
+                            'src/assets/imagens/img7.jpeg',
+                            'src/assets/imagens/img8.jpeg']} />
+                    </div>
+                    <div className='cu'>
+                        <Carousel srcPhotos={['src/assets/imagens/img1.jpeg',
+                            'src/assets/imagens/img2.jpeg',
+                            'src/assets/imagens/img3.jpeg',
+                            'src/assets/imagens/img4.jpeg',
+                            'src/assets/imagens/img5.jpeg',
+                            'src/assets/imagens/img6.jpeg',
+                            'src/assets/imagens/img7.jpeg',
+                            'src/assets/imagens/img8.jpeg']} />
+                    </div>
+
+                </div>
+
+
+            </div>
         </>
     )
 }

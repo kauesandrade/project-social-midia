@@ -11,7 +11,7 @@ import { PiSealCheckDuotone } from "react-icons/pi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 import Carousel from '../carousel';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const post = (props) => {
 
@@ -63,17 +63,17 @@ const post = (props) => {
     return (
         <article>
 
-            <section className='sectionProfilePost'>
-                <div className='divProfileInformation'>
-                    <div className='divProfileImg'>
+            <section className='sectionProfilePost flexCenter'>
+                <div className='divProfileInformation flexCenter'>
+                    <div className='flexCenter'>
                         <img className='profileImgPost' src={props.profilePhoto} alt="" />
                     </div>
-                    <div className='divUsernameTimePost'>
-                        <div className='divUsername'>
+                    <div className='divUsernameTimePost flexCenter'>
+                        <div className='divUsername flexCenter'>
                             <p>@{username}</p>
                             <PiSealCheckDuotone className='iconVerify' />
                         </div>
-                        <div className='divTimePost'>
+                        <div className='divTimePost flexCenter'>
                             <span>•</span>
                             <p>{props.timePost}</p>
                         </div>
@@ -86,9 +86,9 @@ const post = (props) => {
 
             <Carousel srcPhotos={props.srcPhotos} />
 
-            <section>
+            <section className='sectionDescription'>
                 <div className='divIconsPost'>
-                    <div className='divFirstIcons'>
+                    <div className='divFirstIcons flexCenter'>
                         <div className='divLikeCounter'>
                             {isLike && (
                                 <FaHeart onClick={() => handleClickHeart(likes)} className='iconsPost' />
@@ -96,12 +96,11 @@ const post = (props) => {
                             {!isLike && (
                                 <FaRegHeart onClick={() => handleClickHeart(likes)} className='iconsPost' />
                             )}
-                            {/* <p className='pCounter'>{likes}</p> */}
                         </div>
                         <FaRegComment className='iconsPost' />
                         <GoPaperAirplane className='iconsPost' />
                     </div>
-                    <div className='divSecondIcons'>
+                    <div className='divSecondIcons flexCenter'>
                         {isSave && (
                             <MdOutlineBookmark className='iconsPost' onClick={handleClickSave} />
                         )}
@@ -110,19 +109,19 @@ const post = (props) => {
                         )}
                     </div>
                 </div>
-                <div>
                     <div className='divDescriptionPost'>
                         <p><span className='spanUsernamePost'>{username}</span> {props.description}</p>
                     </div>
 
-                    <div>
-                        <p className='pCommentsCount'>See all of {commentsCount} comments</p>
+                    <div className='divCounts'>
+                        <p>Likes {likes}</p>
+                        <span>•</span>
+                        <p>Comments {commentsCount}</p>
                     </div>
 
                     <div className='divDescriptionPost'>
                         {postComments}
                     </div>
-                </div>
 
                 <div className='divCommentInputPost'>
                     <input className='inputCommentPost' type='text' placeholder='Add a comment...' onChange={handleChangeComment} value={comment}></input>

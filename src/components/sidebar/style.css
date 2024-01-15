@@ -36,15 +36,6 @@
     padding: 1rem 2rem;
     color: var(--white);
 }
-/* .liNavBarI {
-    display: flex;
-    align-items: center;
-    font-family: 'Rubik', sans-serif;
-    gap: 1rem;
-    font-weight: bold;
-    padding: 1rem 2rem;
-    color: var(--white);
-} */
 
 .spanIconNav {
     display: flex;
@@ -56,17 +47,24 @@
     transition: background-color 0.5s;
 }
 
-.spanPhoto {
-    padding: 0.5rem;
-    border-radius: 2rem;
-}
-
 .spanIconNav:hover {
     background-color: var(--gray);
 }
 
+.spanPhoto {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 10rem;
+    transition: background-color 0.5s;
+}
+
+.spanPhoto:hover{
+    background-color: var(--gray);
+}
+
 .imgNav {
-    width: 2.5rem;
+    width: 3rem;
     border-radius: 3rem;
 }
 
@@ -92,6 +90,7 @@
     color: var(--white);
     border-bottom: solid 2px var(--gray);
     gap: 2rem;
+    z-index: 1000;
 }
 
 .navBarShow{
@@ -107,6 +106,8 @@
     color: var(--white);
     border-bottom: solid 2px var(--gray);
     gap: 2rem;
+    overflow-y: none;
+    z-index: 1000;
 }
 
 .aMenu {
