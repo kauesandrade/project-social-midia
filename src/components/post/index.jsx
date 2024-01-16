@@ -113,7 +113,7 @@ const post = (props) => {
                         <p><span className='spanUsernamePost'>{username}</span> {props.description}</p>
                     </div>
 
-                    <div className='divCounts'>
+                    <div className='divCounts flexCenter'>
                         <p>Likes {likes}</p>
                         <span>•</span>
                         <p>Comments {commentsCount}</p>

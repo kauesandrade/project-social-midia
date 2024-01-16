@@ -10,7 +10,7 @@ import { ImageGallery } from "react-image-grid-gallery";
 const imagesArray = [
     {
         alt: "Image1's alt text",
-        caption: "Image1's description",
+        caption: "Cuzin",
         src: "src/assets/imagens/img1.jpeg",
     },
     {
@@ -29,7 +29,7 @@ const explorePage = () => {
 
     return (
         <>
-            <Sidebar />
+            <Sidebar page = 'explore'/>
             <main className='mainExplorePage'>
 
                 <ImageGallery

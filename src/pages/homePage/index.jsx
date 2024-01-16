@@ -60,7 +60,7 @@ const homePage = () => {
 
     return (
         <>
-            <Sidebar />
+            <Sidebar page = 'home'/>
             <main className='mainHomePage'>
                 {posts}
             </main>

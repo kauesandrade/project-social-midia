@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --black: #010101;
-    --white: #fefefe;
+    --black: #0a0a0a;
+    --black-2: #111111;
+    --white: #f1f1f1;
     --gray: #2F3336;
     --gray-2: #808080;
     --light-gray: #E5E5E5;
@@ -18,7 +19,7 @@
     height: auto;
     min-height: 100vh;
     padding: 5rem 0;
-    gap: 3rem;
+    gap: 1rem;
     margin-left: 15%;
     background-color: var(--black);
 
@@ -41,13 +42,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .divInformationImage{
     display: flex; 
+    justify-content: center;
+    width: 100%;
     gap: 7rem;
+    
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--black-2);
 }
 
 .imgProfile{
@@ -102,9 +108,101 @@
 
 .divHighlights{
     display: flex;
+    flex-direction: column;
     align-items: start;
-    width: 50%;
+    width: 100%;
+    gap: 1.5rem;
+    font-size: 18px;
+    font-weight: 600;
+
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--black-2);
+}
+
+.divHighlightsComponents{
+    display: flex;
+    align-items: start;
+    width: 100%;
     gap: 3rem;
+}
+
+/* .divHighlights{
+    display: flex;
+    align-items: start;
+    width: 100%;
+    gap: 3rem;
+
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--black-2);
+} */
+
+
+.sectionProfilePosts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--black-2);
+    
+}
+
+.navProfilePosts{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2rem;
+
+ padding-bottom: 1rem;
+ border-bottom: solid 2px var(--gray);
+}
+
+.divSelectionPosts{
+    gap: 0.2rem;
+    padding: 0.4rem 1rem;
+    color: var(--gray-2);
+}
+
+.divSelectionPosts:hover{
+    border-radius: 1rem;
+    background-color: var(--gray);
+}
+
+.iconsPost{
+    font-size: 1.5rem;
+}
+
+.selection{
+    color: var(--white);
+}
+
+.divAllPosts{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.divPartPosts{
+    display: flex;
+    gap: 1rem;
+}
+
+.divPost{
+    width: 250px;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+}
+
+.iconHeart{
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1000;
 }
 
 

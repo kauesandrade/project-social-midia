@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --black: #010101;
-    --white: #fefefe;
+    --black: #0a0a0a;
+    --black-2: #111111;
+    --white: #f1f1f1;
     --gray: #2F3336;
     --gray-2: #808080;
     --light-gray: #E5E5E5;
@@ -16,17 +17,18 @@
 }
 
 article{
-    /* background-color: var(--gray);  */
-    width: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 400px;
     gap: 0.5rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--black-2);
+
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     color: var(--white);
-    border-bottom: solid 2px var(--gray);
 }
 
 .sectionProfilePost{
@@ -89,7 +91,6 @@ article{
 
 .iconsPost{
     font-size: 1.5rem;
-    
 }
 
 .divDescriptionPost{
@@ -102,8 +103,6 @@ article{
 }
 
 .divCounts{
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
     color: var(--gray-2);
     margin: 0%;

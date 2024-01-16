@@ -1,21 +1,42 @@
 import './style.css'
+
 import Sidebar from '../../components/sidebar'
+import Carousel from '../../components/carousel';
 import Highlight from '../../components/highlight';
 import Highlights from '../../components/highlights';
 
-import Flicking from "@egjs/react-flicking";
+
+import { MdBookmarkBorder } from "react-icons/md";
+import { MdOutlineBookmark } from "react-icons/md";
+import { BsFillGridFill } from "react-icons/bs";
+import { BsGrid } from "react-icons/bs";
+import { BsFillFilePersonFill } from "react-icons/bs";
+import { BsFilePerson } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
 
 import { PiSealCheckDuotone } from "react-icons/pi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
+
+import Flicking from "@egjs/react-flicking";
 import { useState } from 'react';
+
+
 
 const profilePage = () => {
 
     const [isVerify, setIsVerify] = useState(true) //props de verificado 
 
+    const [selection, setSelection] = useState('posts');
+
+    const hadleClickSelection = (selection) => {
+        setSelection(selection)
+    }
+
     return (
         <>
-            <Sidebar />
+            <Sidebar page='profile' />
+
             <main className='mainProfilePage'>
                 <section className='sectionProfileInformations'>
                     {/* Perfil infomacoes */}
@@ -63,11 +84,219 @@ const profilePage = () => {
                         </div>
                     </div>
                     <div className='divHighlights'>
-                        <Highlights />
+                        {/* <Highlights /> */}
+                        <p>Highlight</p>
+                        <div className='divHighlightsComponents'>
+                            <Highlight />
+                            <Highlight />
+                            <Highlight />
+                            <Highlight />
+                        </div>
+
                     </div>
                 </section>
-                <section>
+                <section className='sectionProfilePosts'>
                     {/* publicacoes */}
+                    <nav className='navProfilePosts'>
+                        {/* navBar */}
+                        <div className='divSelectionPosts flex' onClick={() => hadleClickSelection('posts')}>
+                            {/* posts */}
+                            {selection == 'posts' && (
+                                <>
+                                    <BsFillGridFill className='iconsPost selection' />
+                                    <p className='selection'>Posts</p>
+                                </>
+                            )}
+                            {selection != 'posts' && (
+                                <>
+                                    <BsGrid className='iconsPost' />
+                                    <p>Posts</p>
+                                </>
+                            )}
+
+                        </div>
+                        <div className='divSelectionPosts flex' onClick={() => hadleClickSelection('mentions')}>
+                            {/* mention */}
+                            {selection == 'mentions' && (
+                                <>
+                                    <BsFillFilePersonFill className='iconsPost selection' />
+                                    <p className='selection'>Mentions</p>
+                                </>
+                            )}
+                            {selection != 'mentions' && (
+                                <>
+                                    <BsFilePerson className='iconsPost' />
+                                    <p>Mentions</p>
+                                </>
+                            )}
+
+                        </div>
+                        <div className='divSelectionPosts flex' onClick={() => hadleClickSelection('saves')}>
+                            {/* saves */}
+                            {selection == 'saves' && (
+                                <>
+                                    <MdOutlineBookmark className='iconsPost selection' />
+                                    <p className='selection'>Saves</p>
+                                </>
+                            )}
+                            {selection != 'saves' && (
+                                <>
+                                    <MdBookmarkBorder className='iconsPost' />
+                                    <p>Saves</p>
+                                </>
+                            )}
+
+                        </div>
+                    </nav>
+                    <div>
+                        {selection == 'posts' && (
+                            <div className='divAllPosts'>
+                                <div className='divPartPosts'>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                </div>
+                                <div className='divPartPosts'>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                </div>
+                                <div className='divPartPosts'>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                    <div className='divPost'>
+                                        <FaHeart className='iconsPost iconHeart' />
+                                        <Carousel
+                                            srcPhotos={['src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg',
+                                                'src/assets/imagens/profile.jpg'
+                                            ]}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        {selection == 'mentions' && (
+                            <>
+                                <p>mentions</p>
+                            </>
+                        )}
+                        {selection == 'saves' && (
+                            <>
+                                <p>saves</p>
+                            </>
+                        )}
+                        {/* grid posts */}
+                    </div>
                 </section>
             </main>
 

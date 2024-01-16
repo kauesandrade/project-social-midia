@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --black-50p: #010101de;
-    --black: #010101;
-    --white: #fefefe;
+    --black: #0a0a0a;
+    --black-2: #111111;
+    --white: #f1f1f1;
     --gray: #2F3336;
+    --gray-2: #808080;
     --light-gray: #E5E5E5;
+    --blue-verify: #2c8ddd;
+    --blue: #0ecfe9;
 }
 
 .asideSidebar {
@@ -44,6 +47,7 @@
     border-radius: 1.5rem;
     display: flex;
     gap: 1rem;
+    color: var(--gray-2);
     transition: background-color 0.5s;
 }
 
@@ -93,21 +97,29 @@
     z-index: 1000;
 }
 
+.selection{
+    color: var(--white);
+}
+
+
 .navBarShow{
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    padding: 4rem 0;
     display: none;
     flex-direction: column;
     align-items: center;
-    background-color: var(--black);
-    font-family: 'Rubik', sans-serif;
-    color: var(--white);
-    border-bottom: solid 2px var(--gray);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 4rem 0;
     gap: 2rem;
+
+    background-color: rgba(0, 0, 0, 0.900);
+    border-bottom: solid 2px var(--gray);
     overflow-y: none;
     z-index: 1000;
+    
+    font-family: 'Rubik', sans-serif;
+    color: var(--white);
+    backdrop-filter: blur(10px);
 }
 
 .aMenu {
@@ -117,10 +129,9 @@
 }
 
 
-
 @media screen and (max-width: 1500px) {
 
-    a {
+    .aNames {
         display: none;
     }
 
