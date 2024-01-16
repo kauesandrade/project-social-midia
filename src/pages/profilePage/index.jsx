@@ -4,6 +4,7 @@ import Sidebar from '../../components/sidebar'
 import Carousel from '../../components/carousel';
 import Highlight from '../../components/highlight';
 import Highlights from '../../components/highlights';
+import ProfilePosts from '../../components/profliePosts';
 
 
 import { MdBookmarkBorder } from "react-icons/md";
@@ -42,12 +43,26 @@ const profilePage = () => {
                     {/* Perfil infomacoes */}
                     <div className='divInformationImage'>
                         {/* informacoes e imagem de perfil*/}
+                        <div className='divProfileNameButtons flex topProfileName'>
+                            <div className='divProfileName flex'>
+                                <p>kauesandrade</p>
+                                {isVerify && (
+                                    <PiSealCheckDuotone className='iconVerify' />
+                                )}
+
+                            </div>
+                            <div className='divButtons flex'>
+                                <button className='buttonsProfile'> Seguir </button>
+                                <button className='buttonsProfile'> Enviar Mensagem </button>
+                                <BiDotsHorizontalRounded className='iconsPost' />
+                            </div>
+                        </div>
                         <div>
                             <img className='imgProfile' src="src/assets/imagens/profile.jpg" alt="Profile Photo" />
                             {/* imagen de perfil */}
                         </div>
                         <div className='divInformations'>
-                            <div className='divProfileNameButtons flex'>
+                            <div className='divProfileNameButtons flex buttonProfileName'>
                                 <div className='divProfileName flex'>
                                     <p>kauesandrade</p>
                                     {isVerify && (
@@ -150,143 +165,11 @@ const profilePage = () => {
                     </nav>
                     <div>
                         {selection == 'posts' && (
-                            <div className='divAllPosts'>
-                                <div className='divPartPosts'>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                </div>
-                                <div className='divPartPosts'>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                </div>
-                                <div className='divPartPosts'>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='divPost'>
-                                        <FaHeart className='iconsPost iconHeart' />
-                                        <Carousel
-                                            srcPhotos={['src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg',
-                                                'src/assets/imagens/profile.jpg'
-                                            ]}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                            <ProfilePosts />
                         )}
                         {selection == 'mentions' && (
                             <>
+                                {/* <ProfilePosts /> */}
                                 <p>mentions</p>
                             </>
                         )}

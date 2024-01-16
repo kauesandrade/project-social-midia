@@ -114,30 +114,30 @@ const sidebar = (pros) => {
                 <nav className='navBarShow'>
                     <ul className='ulNavBar'>
                         <li className='liNavBar'>
-                            <span className='spanIconNav' onClick={() => handleClickMenu()}>
+                            <span className='spanIconNav selection' onClick={() => handleClickMenu()}>
                                 <IoClose className='iconClose' />
                             </span>
                         </li>
                         <li className='liNavBar'>
-                            <span className='spanIconNav' onClick={() => { handleClickMenu(); navigate('/') }}>
+                            <span className='spanIconNav selection' onClick={() => { handleClickMenu(); navigate('/') }}>
                                 <PiHouse className='iconsNav' />
                                 <a>Home</a>
                             </span>
                         </li>
                         <li className='liNavBar'>
-                            <span className='spanIconNav' onClick={() => { handleClickMenu(); navigate('/explore') }}>
+                            <span className='spanIconNav selection' onClick={() => { handleClickMenu(); navigate('/explore') }}>
                                 <GoHash className='iconsNav' />
                                 <a>Explore</a>
                             </span>
                         </li>
                         <li className='liNavBar'>
-                            <span className='spanIconNav' onClick={() => { handleClickMenu(); navigate('/menssages') }}>
+                            <span className='spanIconNav selection' onClick={() => { handleClickMenu(); navigate('/menssages') }}>
                                 <FaRegCommentAlt className='iconsNav' />
                                 <a>Menssages</a>
                             </span>
                         </li>
                         <li className='liNavBar'>
-                            <span className='spanIconNav' onClick={() => { handleClickMenu(); navigate('/profile') }}>
+                            <span className='spanIconNav selection' onClick={() => { handleClickMenu(); navigate('/profile') }}>
                                 <IoPersonOutline className='iconsNav' />
                                 <a>Profile</a>
                             </span>

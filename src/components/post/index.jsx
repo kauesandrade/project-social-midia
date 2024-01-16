@@ -62,7 +62,6 @@ const post = (props) => {
 
     return (
         <article>
-
             <section className='sectionProfilePost flexCenter'>
                 <div className='divProfileInformation flexCenter'>
                     <div className='flexCenter'>
