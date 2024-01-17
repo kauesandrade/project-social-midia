@@ -15,54 +15,48 @@ const profilePosts = () => {
         { srcPhotos: ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'] },
     ]
 
-    const divPost = postsData.map((src, key) => {
+    const [cu, setCu] = useState()
+    const [divs, setDivs] = useState([])
+    const [div, setDiv] = useState([])
 
-        return (
-            <div className='divPost' key={key}>
-                <FaHeart className='iconsPost iconHeart' />
-                <Carousel srcPhotos={src.srcPhotos} />
-            </div>
-        )
-    })
-
-    const [cuza, setCuza] = useState([])
-
-    const set = divPost.map((divPost, key) => {
-
-        setCuza(divPost)
-
-        return (
-
-            {cuza}
-    
-        )
-    })
+    useEffect(() => {
 
 
-    const divPartPosts = set.map((set, key) => {
 
-        return (
-            <div className='divPartPosts' key={key}>
-                {set}
-            </div>
-        )
-    })
+        const divPost = postsData.map((src, key) => {
 
-    // const divPartPosts = divPost.map((divPost, key) => {
+            setDiv([...div, 
+                <div className='divPost' key={key}>
+                    <FaHeart className='iconsPost iconHeart' />
+                    <Carousel srcPhotos={src.srcPhotos} />
+                </div>
+            ])
 
-    //     if (key % 3 == 0) {
-    //         return (
-    //             <div className='divPartPosts' key={key}>
-    //                 {divPost}
-    //             </div>
-    //         )
-    //     }
-    // })
+            if (key % 3 == 0) {
+                setDivs(div)
+                setDiv([])
+            }
+        })
+
+        setCu(divs.map((divs, key) => {
+
+            if (key % 3 == 0) {
+                return (
+                    <div className='divPartPosts' key={key}>
+                        {divs}
+                    </div>
+                )
+            }
+        }))
+
+    }, []);
+
+
 
     return (
         <>
             <div className='divAllPosts'>
-                {divPartPosts}
+                {cu}
             </div>
 
         </>
