@@ -164,21 +164,41 @@ const profilePage = () => {
                         </div>
                     </nav>
                     <div>
+
                         {selection == 'posts' && (
-                            <ProfilePosts />
+
+                            <ProfilePosts srcs = {[['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']
+                            ]} />
+
                         )}
+
                         {selection == 'mentions' && (
-                            <>
-                                {/* <ProfilePosts /> */}
-                                <p>mentions</p>
-                            </>
+                            
+                            <ProfilePosts srcs = {[['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']
+                            ]} />
+
                         )}
+
                         {selection == 'saves' && (
-                            <>
-                                <p>saves</p>
-                            </>
+                           
+                           <ProfilePosts srcs = {[['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']
+                            ]} />
+
                         )}
-                        {/* grid posts */}
+                        
                     </div>
                 </section>
             </main>

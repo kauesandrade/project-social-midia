@@ -2,61 +2,36 @@ import './style.css'
 
 import Carousel from '../carousel'
 import { FaHeart } from "react-icons/fa6";
-import { useState, useEffect } from 'react';
 
-const profilePosts = () => {
+const profilePosts = (props) => {
 
-    const postsData = [
-        { srcPhotos: ['src/assets/imagens/profile.jpg'] },
-        { srcPhotos: ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'] },
-        { srcPhotos: ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'] },
-        { srcPhotos: ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'] },
-        { srcPhotos: ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'] },
-        { srcPhotos: ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'] },
-    ]
+    const divPost = props.srcs.map((src, key) => {
 
-    const [cu, setCu] = useState()
-    const [divs, setDivs] = useState([])
-    const [div, setDiv] = useState([])
+        return (
+            <div className='divPost' key={key}>
+                <FaHeart className='iconsPost iconHeart' />
+                <Carousel srcPhotos={src} />
+            </div>
+        )
+    })
 
-    useEffect(() => {
+    const chunk = (arr, size) =>
+        Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+            arr.slice(i * size, i * size + size)
+    );
 
-
-
-        const divPost = postsData.map((src, key) => {
-
-            setDiv([...div, 
-                <div className='divPost' key={key}>
-                    <FaHeart className='iconsPost iconHeart' />
-                    <Carousel srcPhotos={src.srcPhotos} />
-                </div>
-            ])
-
-            if (key % 3 == 0) {
-                setDivs(div)
-                setDiv([])
-            }
-        })
-
-        setCu(divs.map((divs, key) => {
-
-            if (key % 3 == 0) {
-                return (
-                    <div className='divPartPosts' key={key}>
-                        {divs}
-                    </div>
-                )
-            }
-        }))
-
-    }, []);
-
-
+    const divPartsPosts = chunk(divPost, 3).map((divide, key) => {
+        return (
+            <div className='divPartPosts' key={key}>
+                {divide}
+            </div>
+        )
+    })
 
     return (
         <>
             <div className='divAllPosts'>
-                {cu}
+                {divPartsPosts}
             </div>
 
         </>
