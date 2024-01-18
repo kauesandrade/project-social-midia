@@ -1,7 +1,6 @@
-import './style.css'
+import './style.css';
 
 import Sidebar from '../../components/sidebar'
-import Carousel from '../../components/carousel';
 import Highlight from '../../components/highlight';
 import Highlights from '../../components/highlights';
 import ProfilePosts from '../../components/profliePosts';
@@ -167,7 +166,8 @@ const profilePage = () => {
 
                         {selection == 'posts' && (
 
-                            <ProfilePosts srcs = {[['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            <ProfilePosts srcs = {[
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
@@ -180,7 +180,8 @@ const profilePage = () => {
 
                         {selection == 'mentions' && (
                             
-                            <ProfilePosts srcs = {[['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            <ProfilePosts srcs = {[
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
@@ -191,7 +192,8 @@ const profilePage = () => {
 
                         {selection == 'saves' && (
                            
-                           <ProfilePosts srcs = {[['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                           <ProfilePosts srcs = {[
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']

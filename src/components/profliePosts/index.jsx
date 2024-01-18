@@ -1,5 +1,3 @@
-import './style.css'
-
 import Carousel from '../carousel'
 import { FaHeart } from "react-icons/fa6";
 
