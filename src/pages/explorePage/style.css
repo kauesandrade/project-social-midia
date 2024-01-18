@@ -23,9 +23,10 @@
     color: var(--white);
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1250px) {
     .mainExplorePage {
         margin-left: 120px;
+        padding: 0.5rem;
     }
 
 }

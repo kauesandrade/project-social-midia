@@ -7,23 +7,23 @@ const explorePage = () => {
 
     return (
         <>
-            <Sidebar page = 'explore'/>
+            <Sidebar page='explore' />
             <main className='mainExplorePage'>
 
-                <ProfilePosts 
-                srcs = {[
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                    ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']
-                    ]}
-                
+                <div>
+                    <ProfilePosts
+                        srcs={[
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg']
+                        ]}
+                    />
+                </div>
 
-                
-                />
 
             </main>
         </>

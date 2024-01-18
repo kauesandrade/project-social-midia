@@ -1,0 +1,43 @@
+.divAllPosts{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.divPartPosts{
+    display: flex;
+    gap: 1rem;
+}
+
+.divPost{
+    width: 250px;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+}
+
+.iconHeart{
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 10;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .iconHeart{
+        font-size: 1rem;
+    }
+
+    .divPost{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .divPost{
+        width: 100px;
+    }
+
+}

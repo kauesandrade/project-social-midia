@@ -24,11 +24,6 @@ const sidebar = (pros) => {
 
     const [selection, setSelection] = useState(pros.page)
 
-    const handleClickSelection = (selection) => {
-        setSelection(selection)
-        console.log(selection);
-    }
-
     // ====================FAZER UM COMPONENT PARA OS LI===========================
     // ====================FAZER UMA TEXTURA QUANDO ESTIVER NA PAGINA SELECIONADA===========================
 

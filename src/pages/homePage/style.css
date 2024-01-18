@@ -16,13 +16,13 @@
     width: 100%;
     height: auto;
     min-height: 100vh;
-    padding: 5rem 0;
-    gap: 3rem;
+    padding: 3rem 0;
+    gap: 1.5rem;
     margin-left: 15%;
     background-color: var(--black);
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1250px) {
     .mainHomePage {
         margin-left: 120px;
     }
@@ -31,5 +31,14 @@
 @media screen and (max-width: 770px) {
     .mainHomePage {
         margin: 80px 0 0 0;
+        padding: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .mainHomePage{
+        padding: 0;
+        gap: 0.5rem;
     }
 }
