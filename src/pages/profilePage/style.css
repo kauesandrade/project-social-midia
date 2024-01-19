@@ -119,6 +119,8 @@
     font-size: 18px;
     font-weight: 600;
 
+    /* overflow: scroll; */
+
     padding: 1.5rem;
     border-radius: 1rem;
     background-color: var(--black-2);
@@ -127,8 +129,7 @@
 .divHighlightsComponents{
     display: flex;
     align-items: start;
-    width: 100%;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 /* .divHighlights{

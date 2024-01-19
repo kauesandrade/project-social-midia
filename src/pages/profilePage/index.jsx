@@ -18,7 +18,6 @@ import { FaHeart } from "react-icons/fa6";
 import { PiSealCheckDuotone } from "react-icons/pi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
-import Flicking from "@egjs/react-flicking";
 import { useState } from 'react';
 
 
@@ -101,6 +100,9 @@ const profilePage = () => {
                         {/* <Highlights /> */}
                         <p>Highlight</p>
                         <div className='divHighlightsComponents'>
+                            {/* <Highlights /> */}
+                            <Highlight />
+                            <Highlight />
                             <Highlight />
                             <Highlight />
                             <Highlight />
@@ -167,8 +169,8 @@ const profilePage = () => {
                         {selection == 'posts' && (
 
                             <ProfilePosts srcs = {[
-                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
-                            ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
+                            ['src/assets/imagens/img1.jpeg', 'src/assets/imagens/img2.jpeg'],
+                            ['src/assets/imagens/img5.jpeg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],

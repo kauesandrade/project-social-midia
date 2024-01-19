@@ -1,3 +1,15 @@
 https://codesweetly.com/react-image-grid-gallery
 https://bvaughn.github.io/react-virtualized/#/components/Masonry
 https://naver.github.io/egjs-flicking/Demos#horizontal-scroller
+
+https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/ (IMAGEM AUTO RESIZE)
+
+==================================================================
+
+NEED TO DO 
+
+- Login and register page
+- Menssage page
+- Finish explore page
+- Do the hightlights
+- Open the profile or post when click

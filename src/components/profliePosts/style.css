@@ -12,6 +12,7 @@
 
 .divPost{
     width: 250px;
+    height: 250px;
     display: flex;
     align-items: start;
     justify-content: end;
@@ -31,6 +32,7 @@
 
     .divPost{
         width: 200px;
+        height: 200px;
     }
 }
 
@@ -38,6 +40,7 @@
 
     .divPost{
         width: 100px;
+        height: 100px;
     }
 
 }

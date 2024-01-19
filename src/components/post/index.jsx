@@ -83,7 +83,7 @@ const post = (props) => {
                 </div>
             </section>
 
-            <Carousel srcPhotos={props.srcPhotos} />
+            <Carousel  srcPhotos={props.srcPhotos} />
 
             <section className='sectionDescription'>
                 <div className='divIconsPost'>
