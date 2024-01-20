@@ -70,7 +70,7 @@ const menssagePage = () => {
                                 <img className='imgProfileMenssage' src="src/assets/imagens/profile.jpg" alt="Profile Photo" />
                             </div>
                             <div className='divMenssage cuzin'>
-                                <p>cussssssssssssssssssssssssssssssssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddsssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                                <p>cusssssddddddddddddddddddddddddddddddddddsssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
                             </div>
                         </div>
 
