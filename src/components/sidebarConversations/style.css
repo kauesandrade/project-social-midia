@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black: #0a0a0a;
+    --black-2: #111111;
+    --white: #f1f1f1;
+    --gray: #2F3336;
+    --gray-2: #808080;
+    --light-gray: #E5E5E5;
+    --blue-verify: #2c8ddd;
+    --blue: #0ecfe9;
+
+    --bg-conversation:#4b4b4b7e;
+}
+
+.sectionAllConversation{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 100%;
+    gap: 2px;
+
+    /* background-color: #194449; */
+    border-right: solid var(--gray) 2px;
+}

@@ -123,7 +123,7 @@ const post = (props) => {
                     </div>
 
                 <div className='divCommentInputPost'>
-                    <input className='inputCommentPost' type='text' placeholder='Add a comment...' onChange={handleChangeComment} value={comment}></input>
+                    <input className='inputCommentPost' type='text' placeholder='Add a comment...' onChange={handleChangeComment} value={comment} />
                     {isShowButtonShare && (
                         <button className='buttonShareCommentPost' onClick={() => handleClickComment(comment, commentsCount)}>Share</button>
                     )}

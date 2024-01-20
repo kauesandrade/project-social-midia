@@ -1,8 +1,8 @@
 import './style.css';
 
 import Sidebar from '../../components/sidebar'
-import Highlight from '../../components/highlight';
-import Highlights from '../../components/highlights';
+import Highlight from '../../components/testing/highlight';
+import Highlights from '../../components/testing/highlights';
 import ProfilePosts from '../../components/profliePosts';
 
 
@@ -50,8 +50,8 @@ const profilePage = () => {
 
                             </div>
                             <div className='divButtons flex'>
-                                <button className='buttonsProfile'> Seguir </button>
-                                <button className='buttonsProfile'> Enviar Mensagem </button>
+                                <button className='buttonsProfile'> Follow </button>
+                                <button className='buttonsProfile'> Send a Menssage </button>
                                 <BiDotsHorizontalRounded className='iconsPost' />
                             </div>
                         </div>
@@ -69,8 +69,8 @@ const profilePage = () => {
 
                                 </div>
                                 <div className='divButtons'>
-                                    <button className='buttonsProfile'> Seguir </button>
-                                    <button className='buttonsProfile'> Enviar Mensagem </button>
+                                    <button className='buttonsProfile'> Follow </button>
+                                    <button className='buttonsProfile'> Send a Menssage </button>
                                 </div>
                                 <div className='flex'>
                                     <BiDotsHorizontalRounded className='iconsPost' />
@@ -96,11 +96,9 @@ const profilePage = () => {
                             {/* informacoes */}
                         </div>
                     </div>
-                    <div className='divHighlights'>
-                        {/* <Highlights /> */}
+                    {/* <div className='divHighlights'>
                         <p>Highlight</p>
                         <div className='divHighlightsComponents'>
-                            {/* <Highlights /> */}
                             <Highlight />
                             <Highlight />
                             <Highlight />
@@ -109,7 +107,7 @@ const profilePage = () => {
                             <Highlight />
                         </div>
 
-                    </div>
+                    </div> */}
                 </section>
                 <section className='sectionProfilePosts'>
                     {/* publicacoes */}
