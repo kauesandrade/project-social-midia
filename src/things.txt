@@ -13,3 +13,7 @@ NEED TO DO
 - Finish explore page
 - Do the hightlights
 - Open the profile or post when click
+
+
+
+================================== CHANGE ALL PAGES TO CONTAINER AND THE DIVS =================================================

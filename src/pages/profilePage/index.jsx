@@ -1,8 +1,8 @@
 import './style.css';
 
 import Sidebar from '../../components/sidebar'
-import Highlight from '../../components/testing/highlight';
-import Highlights from '../../components/testing/highlights';
+// import Highlight from '../../components/testing/highlight';
+// import Highlights from '../../components/testing/highlights';
 import ProfilePosts from '../../components/profliePosts';
 
 

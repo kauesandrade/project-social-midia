@@ -80,6 +80,8 @@
 }
 
 .divMenssage{
+    display: flex;
+    flex-wrap: wrap;
     padding: 0.5rem 1rem;
     background-color: var(--gray);
     border-radius: 1rem;
