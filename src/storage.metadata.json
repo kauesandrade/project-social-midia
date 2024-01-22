@@ -1,6 +1,9 @@
 {
     "CONVERSATION": {
         "PROFILE-NAME": "NAME"
+    },
+    "API":{
+        "API_URL": "http://localhost:8080"
     }
 }
 

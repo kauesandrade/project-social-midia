@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 
 const sidebarConversations = () => {
 
-
     const [conversationsData, setConversationsData] = useState([
         {srcProfileImg: "src/assets/imagens/profile.jpg", profileName: 'Kaue Andrade', status: 'Active 1h ago', selection: 'noSelectionConversation'},
         {srcProfileImg: "src/assets/imagens/profile.jpg", profileName: 'Kaue Andrade', status: 'Me: lets go?', selection: 'noSelectionConversation'},

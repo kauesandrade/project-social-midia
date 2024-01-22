@@ -1,9 +1,15 @@
 import './style.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Sidebar from '../../components/sidebar'
 // import Highlight from '../../components/testing/highlight';
 // import Highlights from '../../components/testing/highlights';
 import ProfilePosts from '../../components/profliePosts';
+
+// import useProfileData from '../../hooks/useProfileData';
+
+import metadata from '../../storage.metadata.json';
 
 
 import { MdBookmarkBorder } from "react-icons/md";
@@ -18,13 +24,18 @@ import { FaHeart } from "react-icons/fa6";
 import { PiSealCheckDuotone } from "react-icons/pi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
-import { useState } from 'react';
-
 
 
 const profilePage = () => {
 
-    const [isVerify, setIsVerify] = useState(true) //props de verificado 
+    const [profile, setProfile] = useState({});
+    const [id, setId] = useState();
+
+    useEffect(() => {
+        axios.get(metadata.API.API_URL + "/profile/1").then((response) => setProfile(response.data))
+    }, []);
+
+    // const [isVerify, setIsVerify] = useState() //props de verificado 
 
     const [selection, setSelection] = useState('posts');
 
@@ -43,8 +54,8 @@ const profilePage = () => {
                         {/* informacoes e imagem de perfil*/}
                         <div className='divProfileNameButtons flex topProfileName'>
                             <div className='divProfileName flex'>
-                                <p>kauesandrade</p>
-                                {isVerify && (
+                                <p>{profile?.name}</p>
+                                {profile?.verified && (
                                     <PiSealCheckDuotone className='iconVerify' />
                                 )}
 
@@ -62,8 +73,8 @@ const profilePage = () => {
                         <div className='divInformations'>
                             <div className='divProfileNameButtons flex buttonProfileName'>
                                 <div className='divProfileName flex'>
-                                    <p>kauesandrade</p>
-                                    {isVerify && (
+                                    <p>{profile?.name}</p>
+                                    {profile?.verified && (
                                         <PiSealCheckDuotone className='iconVerify' />
                                     )}
 
