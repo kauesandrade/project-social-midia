@@ -5,6 +5,7 @@ import HomePage from './pages/homePage';
 import ExplorePage from './pages/explorePage';
 import MenssagePage from './pages/menssagePage';
 import ProfilePage from './pages/profilePage';
+import LoginPage from './pages/loginPage';
 
 
 function App() {
@@ -12,12 +13,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/explore' element={<ExplorePage />}/>
-        <Route path='/menssages' element={<MenssagePage />}/>
-        <Route path='/profile' element={<ProfilePage />}/>
-      </Routes>
+        <Routes>
+          <Route path='/register' element={<LoginPage />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/explore' element={<ExplorePage />} />
+          <Route path='/menssages' element={<MenssagePage />} />
+          <Route path='/profile' element={<ProfilePage />} />
+        </Routes>
       </BrowserRouter>
     </>
   )
