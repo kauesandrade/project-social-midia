@@ -6,6 +6,7 @@ import ExplorePage from './pages/explorePage';
 import MenssagePage from './pages/menssagePage';
 import ProfilePage from './pages/profilePage';
 import LoginPage from './pages/loginPage';
+import RegisterPage from './pages/registerPage';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/register' element={<LoginPage />} />
+          <Route path='/register' element={<RegisterPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/explore' element={<ExplorePage />} />
