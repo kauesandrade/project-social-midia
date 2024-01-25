@@ -3,8 +3,31 @@ import "./style.css";
 import metadata from "../../storage.metadata.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const registerPage = () => {
+
+  const navigate = useNavigate();
+
+  const [numberEmail, setNumberEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [spanErro1, setSpanErro1] = useState("");
+  const [spanErro2, setSpanErro2] = useState("");
+  const [spanErro3, setSpanErro3] = useState("");
+  const [spanErro4, setSpanErro4] = useState("");
+  const [spanErro5, setSpanErro5] = useState("");
+
+  const [li1, setLi1] = useState();
+  const [li2, setLi2] = useState();
+  const [li3, setLi3] = useState();
+  const [li4, setLi4] = useState();
+
+  const [isDisableButton, setIsDisableButton] = useState(true);
+
   const erros = {
     erro1: "Number or email invalid.",
     erro2: "Another account is using the same number or email.",
@@ -13,49 +36,58 @@ const registerPage = () => {
     erro5: "Passwords doesn't match",
   };
 
-  const [numberEmail, setNumberEmail] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  useEffect(() => {
+    numberEmail.length > 0 && fullName.length > 0 && username.length > 0 && password.length >= 8 && confirmPassword.length >= 8
+      ? setIsDisableButton(false) : setIsDisableButton(true)
+  }, [numberEmail, fullName, username, password, confirmPassword])
 
-  const [spanErro0, setSpanErro0] = useState("");
-  const [spanErro1, setSpanErro1] = useState("");
-  const [spanErro2, setSpanErro2] = useState("");
-  const [spanErro3, setSpanErro3] = useState("");
-  const [spanErro4, setSpanErro4] = useState("");
+  useEffect(() => {
 
-  const verifiedNumberEmail = () => { 
-    
+    var formatSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+    password.length >= 8 ? setLi1(styles.liEnable) : setLi1()
+    password.match(/[A-Z]/g) != null && password.match(/[a-z]/g) != null ? setLi4(styles.liEnable) : setLi4()
+    password.match(/[0-9]/g) != null ? setLi2(styles.liEnable) : setLi2()
+    password.match(formatSpecial) != null ? setLi3(styles.liEnable) : setLi3()
+
+  }, [password])
+
+
+
+  const verifiedNumberEmail = () => {
+
   };
   const verifiedFullName = () => {
 
-   };
-  const verifiedUsername = () => { 
+  };
+  const verifiedUsername = () => {
 
   };
   const verifiedPassword = () => {
 
-   };
-  const verifiedConfirmPassword = () => { 
+  };
+  const verifiedConfirmPassword = () => {
 
   };
 
   const handleClickRegister = () => {
-    const profile = {
-      name: `${fullName}`,
-      username: `${username}`,
-      email: "email",
-      number: "number",
-      password: `${password}`,
-      verified: null,
-      status: null,
-    };
 
-    axios.post("http://localhost:8080/profile", profile);
+    if (verifiedConfirmPassword() && verifiedPassword() && verifiedUsername() && verifiedFullName() && verifiedNumberEmail()) {
+      const profile = {
+        name: `${fullName}`,
+        username: `${username}`,
+        email: "email",
+        number: "number",
+        password: `${password}`,
+        verified: null,
+        status: null,
+      };
 
-    
+      axios.post("http://localhost:8080/profile", profile);
+    }
+
   };
+
 
   // useEffect(() =>{
   //     console.log(password)
@@ -79,7 +111,7 @@ const registerPage = () => {
               value={numberEmail}
             />
             <div className="divInputSpan">
-              <span>{spanErro0}</span>
+              <span>{spanErro1}</span>
             </div>
           </div>
           <div className="divInput">
@@ -92,7 +124,7 @@ const registerPage = () => {
               value={fullName}
             />
             <div className="divInputSpan">
-              <span>{spanErro1}</span>
+              <span>{spanErro2}</span>
             </div>
           </div>
           <div className="divInput">
@@ -105,7 +137,7 @@ const registerPage = () => {
               value={username}
             />
             <div className="divInputSpan">
-              <span>{spanErro2}</span>
+              <span>{spanErro3}</span>
             </div>
           </div>
           <div className="divInput">
@@ -118,7 +150,7 @@ const registerPage = () => {
               value={password}
             />
             <div className="divInputSpan">
-              <span>{spanErro3}</span>
+              <span>{spanErro4}</span>
             </div>
           </div>
           <div className="divInput">
@@ -131,11 +163,21 @@ const registerPage = () => {
               value={confirmPassword}
             />
             <div className="divInputSpan">
-              <span>{spanErro4}</span>
+              <span>{spanErro5}</span>
+            </div>
+            <div className="divListRequestsPassword">
+              <ul>
+                <li style={li1}>minimum 8 characters</li>
+                <li style={li2}>Numbers</li>
+              </ul>
+              <ul>
+                <li style={li3}>Special character</li>
+                <li style={li4}>Uppercase and lowercase letters</li>
+              </ul>
             </div>
           </div>
           <div className="divButton">
-            <button className="buttons" onClick={() => handleClickRegister()}>
+            <button className="buttons" type='button' disabled={isDisableButton} onClick={() => handleClickRegister()}>
               Register
             </button>
           </div>
@@ -143,8 +185,8 @@ const registerPage = () => {
 
         <div className="divDivision"></div>
         <div className="divGo">
-          <p>Don't have a account?</p>
-          <button className="buttonGo buttons">Login</button>
+          <p>Do have a account?</p>
+          <button className="buttonGo buttons" onClick={() => navigate('/login')}>Login</button>
         </div>
       </div>
 
@@ -154,3 +196,10 @@ const registerPage = () => {
 };
 
 export default registerPage;
+
+
+const styles = {
+  liEnable: {
+    color: "#f1f1f1"
+  }
+}

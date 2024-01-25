@@ -8,7 +8,7 @@
     --gray-2: #808080;
     --light-gray: #E5E5E5;
     --blue-verify: #2c8ddd;
-    --blue: #0ecfe9;
+    --blue: #8EBBFF;
 }
 
 .mainRegisterPage {
@@ -79,6 +79,22 @@
     width: 100%;
 }
 
+.divListRequestsPassword{
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray-2);
+    font-size: 12px;
+    width: 100%;
+}
+
+.divListRequestsPassword ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+    gap: 0.2rem;
+}
+
+
 .divButton{
     display: flex;
     flex-direction: column;
@@ -92,7 +108,6 @@
     font-size: 14px;
     color: #ffffff;
     background-color: rgb(28, 28, 30);
-    /* box-shadow: 0 0 .4vw var(--light-gray), 0 0 0 .15vw transparent; */
     border: 0.125em solid var(--light-gray);
     border-radius: 0.5rem;
     outline: none;
@@ -135,6 +150,7 @@
 
 .buttons:disabled {
     pointer-events: none;
+    background-color: var(--gray-2);
 }
 
 .buttons:hover {
@@ -172,5 +188,11 @@
 @media screen and (max-width: 500px) {
     .divCard {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .divListRequestsPassword{
+        flex-direction: column;
     }
 }

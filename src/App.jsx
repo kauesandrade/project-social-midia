@@ -19,7 +19,8 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/explore' element={<ExplorePage />} />
-          <Route path='/menssages' element={<MenssagePage />} />
+          {/* <Route path='/menssages' element={<MenssagePage />} /> */}
+          <Route path='/menssages' element={<ProfilePage />} />
           <Route path='/profile' element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>

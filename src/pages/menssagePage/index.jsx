@@ -9,8 +9,16 @@ import { AiFillExclamationCircle } from "react-icons/ai";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useState } from 'react';
 
 const menssagePage = () => {
+
+
+    const [menssage, setMenssage] = useState("");
+
+    const handleClickShare = () =>{
+        
+    }
 
     return (
         <>
@@ -85,8 +93,8 @@ const menssagePage = () => {
                     </div>
 
                     <div className='divInputMenssage'>
-                        <input type="text" />
-
+                        <input type="text" placeholder='Menssage...' onChange={(e) => setMenssage(e.target.value)} value={menssage} />
+                        <button onClick={() => handleClickShare()}>Share</button>
                     </div>
 
 

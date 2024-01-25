@@ -92,7 +92,6 @@
     width: 60%;
 }
 
-
 .input {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
@@ -142,6 +141,7 @@
 
 .buttons:disabled {
     pointer-events: none;
+    background-color: var(--gray-2);
 }
 
 .buttons:hover {
