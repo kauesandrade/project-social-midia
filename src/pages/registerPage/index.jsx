@@ -55,7 +55,7 @@ const registerPage = () => {
 
 
   const verifiedNumberEmail = () => {
-
+      
   };
   const verifiedFullName = () => {
 
@@ -196,7 +196,6 @@ const registerPage = () => {
 };
 
 export default registerPage;
-
 
 const styles = {
   liEnable: {
