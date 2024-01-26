@@ -38,7 +38,8 @@ const registerPage = () => {
     erro2: "Another account is using the same email.",
     erro3: "Write your full name",
     erro4: "This username already exists",
-    erro5: "Passwords doesn't match",
+    erro5: "This password isn't strong",
+    erro6: "Passwords doesn't match",
   };
 
   useEffect(() => {
@@ -47,7 +48,12 @@ const registerPage = () => {
   }, [email, fullName, username, password, confirmPassword])
 
   useEffect(() => {
-    verifiedPassword()
+    var formatSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+    password.length >= 8 ? setLi1(styles.liEnable) : setLi1()
+    password.match(/[0-9]/g) != null ? setLi2(styles.liEnable) : setLi2()
+    password.match(formatSpecial) != null ? setLi3(styles.liEnable) : setLi3()
+    password.match(/[A-Z]/g) != null && password.match(/[a-z]/g) != null ? setLi4(styles.liEnable) : setLi4()
   }, [password])
 
  const changeVisiblePassword = () =>{
@@ -55,27 +61,39 @@ const registerPage = () => {
  }
 
   const verifiedEmail = () => {
-    numberEmail.match(/[@]/)
-    numberEmail.match(/[.]/)
+    if(email.match(/[@]/) == null && email.match(/[.]/) == null){
+      console.log("aaaaa")
+      setSpanErro1(erros.erro1)
+      return false
+    }else if(email){
+      setSpanErro1(erros.erro2)
+      return false
+    }else{
+      setSpanErro1()
+      return true
+    }
   };
+
   const verifiedFullName = () => {
 
   };
+
   const verifiedUsername = () => {
-
+    // if(username){
+    //   setSpanErro3()
+    //   return true
+    // }else{
+    //   setSpanErro3(erros.erro4)
+    //   return false
+    // }
   };
+
   const verifiedPassword = () => {
-
-    var formatSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-
-    password.length >= 8 ? setLi1(styles.liEnable) : setLi1()
-    password.match(/[0-9]/g) != null ? setLi2(styles.liEnable) : setLi2()
-    password.match(formatSpecial) != null ? setLi3(styles.liEnable) : setLi3()
-    password.match(/[A-Z]/g) != null && password.match(/[a-z]/g) != null ? setLi4(styles.liEnable) : setLi4()
-
     if (li1 && li2 && li3 && li4) {
+      setSpanErro4()
       return true
     } else {
+      setSpanErro4(erros.erro5)
       return false
     }
   };
@@ -85,13 +103,20 @@ const registerPage = () => {
       setSpanErro5()
       return true
     } else {
-      setSpanErro5(erros.erro5)
+      setSpanErro5(erros.erro6)
+      return false
     }
   };
 
   const handleClickRegister = () => {
 
-    if (verifiedConfirmPassword() && verifiedPassword() && verifiedUsername() && verifiedFullName() && verifiedEmail()) {
+    verifiedEmail()
+    verifiedFullName()
+    verifiedUsername()
+    verifiedPassword()
+    verifiedConfirmPassword()
+
+    if (verifiedEmail() && verifiedFullName() && verifiedUsername() && verifiedPassword() && verifiedConfirmPassword()) {
       const profile = {
         name: `${fullName}`,
         username: `${username}`,
