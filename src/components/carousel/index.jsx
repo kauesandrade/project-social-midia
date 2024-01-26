@@ -8,10 +8,7 @@ import { Pagination } from 'swiper/modules';
 
 const carousel = (props) => {
 
-    const srcs = props.srcPhotos
-
-    const SwiperSlideImgs = srcs.map((imgs, key) =><SwiperSlide key={key}><img src={imgs} /></SwiperSlide>);
-
+    const SwiperSlideImgs = props.srcPhotos.map((imgs, key) =><SwiperSlide key={key}><img src={imgs} /></SwiperSlide>);
 
     return (
         <Swiper

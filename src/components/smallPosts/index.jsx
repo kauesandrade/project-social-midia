@@ -3,7 +3,7 @@ import './style.css'
 import Carousel from '../carousel'
 import { FaHeart } from "react-icons/fa6";
 
-const profilePosts = (props) => {
+const smallPost = (props) => {
 
     const divPost = props.srcs.map((src, key) => {
 
@@ -20,10 +20,10 @@ const profilePosts = (props) => {
             arr.slice(i * size, i * size + size)
     );
 
-    const divPartsPosts = chunk(divPost, 3).map((divide, key) => {
+    const divPartsPosts = chunk(divPost, 3).map((division, key) => {
         return (
             <div className='divPartPosts' key={key}>
-                {divide}
+                {division}
             </div>
         )
     })
@@ -38,4 +38,4 @@ const profilePosts = (props) => {
     )
 }
 
-export default profilePosts;
+export default smallPost;

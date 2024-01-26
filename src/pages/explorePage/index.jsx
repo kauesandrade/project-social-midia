@@ -1,17 +1,20 @@
 import './style.css';
 
 import Sidebar from '../../components/sidebar'
-import ProfilePosts from '../../components/profliePosts';
+import SmallPosts from '../../components/smallPosts';
+import OpenPost from '../../components/openPost';
 
 const explorePage = () => {
 
     return (
         <>
+        
+            <OpenPost />
+
             <Sidebar page='explore' />
             <main className='mainExplorePage'>
-
                 <div>
-                    <ProfilePosts
+                    <SmallPosts
                         srcs={[
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
@@ -23,8 +26,6 @@ const explorePage = () => {
                         ]}
                     />
                 </div>
-
-
             </main>
         </>
     )

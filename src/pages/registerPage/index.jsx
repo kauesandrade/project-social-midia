@@ -39,7 +39,7 @@ const registerPage = () => {
     erro3: "Write your full name",
     erro4: "This username already exists",
     erro5: "This password isn't strong",
-    erro6: "Passwords doesn't match",
+    erro6: "Passwords doesn't match"
   };
 
   useEffect(() => {

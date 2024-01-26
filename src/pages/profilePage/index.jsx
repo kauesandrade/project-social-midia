@@ -5,7 +5,7 @@ import axios from 'axios';
 import Sidebar from '../../components/sidebar'
 // import Highlight from '../../components/testing/highlight';
 // import Highlights from '../../components/testing/highlights';
-import ProfilePosts from '../../components/profliePosts';
+import SmallPosts from '../../components/smallPosts';
 
 // import useProfileData from '../../hooks/useProfileData';
 
@@ -177,7 +177,7 @@ const profilePage = () => {
 
                         {selection == 'posts' && (
 
-                            <ProfilePosts srcs = {[
+                            <SmallPosts srcs = {[
                             ['src/assets/imagens/img1.jpeg', 'src/assets/imagens/img2.jpeg'],
                             ['src/assets/imagens/img5.jpeg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
@@ -191,7 +191,7 @@ const profilePage = () => {
 
                         {selection == 'mentions' && (
                             
-                            <ProfilePosts srcs = {[
+                            <SmallPosts srcs = {[
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
@@ -203,7 +203,7 @@ const profilePage = () => {
 
                         {selection == 'saves' && (
                            
-                           <ProfilePosts srcs = {[
+                           <SmallPosts srcs = {[
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],
                             ['src/assets/imagens/profile.jpg', 'src/assets/imagens/profile.jpg'],

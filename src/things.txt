@@ -8,7 +8,7 @@ https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/ 
 
 NEED TO DO 
 
-- Login and register page
+- Login and register page ( X )
 - Menssage page
 - Finish explore page
 - Do the hightlights

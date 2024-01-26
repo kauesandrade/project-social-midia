@@ -24,10 +24,6 @@ const sidebar = (pros) => {
 
     const [selection, setSelection] = useState(pros.page)
 
-    // ====================FAZER UM COMPONENT PARA OS LI===========================
-    // ====================FAZER UMA TEXTURA QUANDO ESTIVER NA PAGINA SELECIONADA===========================
-
-
     return (
         <>
             <aside className='asideSidebar'>
@@ -143,5 +139,12 @@ const sidebar = (pros) => {
         </>
     )
 }
+
+const styles = {
+    blockScroll: {
+        overflow: "none"
+    }
+}
+
 
 export default sidebar;
