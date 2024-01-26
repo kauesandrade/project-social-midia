@@ -31,6 +31,7 @@ const registerPage = () => {
   const [li4, setLi4] = useState();
 
   const [isDisableButton, setIsDisableButton] = useState(true);
+  const [isVisiblePassword, setIsVisiblePassword] = useState(false);
 
   const erros = {
     erro1: "Email invalid.",
@@ -49,7 +50,9 @@ const registerPage = () => {
     verifiedPassword()
   }, [password])
 
-
+ const changeVisiblePassword = () =>{
+  isVisiblePassword == false ? setIsVisiblePassword(true) : setIsVisiblePassword(false)
+ }
 
   const verifiedEmail = () => {
     numberEmail.match(/[@]/)
@@ -115,66 +118,85 @@ const registerPage = () => {
         </div>
         <form className="formInputRegister">
           <div className="divInputSpan">
-            <input
-              type="text"
-              name="text"
-              className="input"
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
+            <div className="divInput">
+              <input
+                type="email"
+                name="email"
+                className="input"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+            </div>
             <div className="divSpan">
               <span>{spanErro1}</span>
             </div>
           </div>
           <div className="divInputSpan">
-            <input
-              type="text"
-              name="text"
-              className="input"
-              placeholder="Full name"
-              onChange={(e) => setFullName(e.target.value)}
-              value={fullName}
-            />
+            <div className="divInput">
+              <input
+                type="text"
+                name="fullName"
+                className="input"
+                placeholder="Full name"
+                onChange={(e) => setFullName(e.target.value)}
+                value={fullName}
+              />
+            </div>
             <div className="divSpan">
               <span>{spanErro2}</span>
             </div>
           </div>
           <div className="divInputSpan">
-            <input
-              type="text"
-              name="text"
-              className="input"
-              placeholder="Username"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
-            />
+
+            <div className="divInput">
+              <input
+                type="text"
+                name="username"
+                className="input"
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+              />
+            </div>
             <div className="divSpan">
               <span>{spanErro3}</span>
             </div>
           </div>
           <div className="divInputSpan">
+            <div className="divInput">
               <input
-                type="password"
-                name="text"
+                type={isVisiblePassword == true ? "text" : "password"}
+                name="password"
                 className="input"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
               />
+              <div>
+                {isVisiblePassword &&
+                  < FiEye onClick={() => changeVisiblePassword()} />
+                }
+                {!isVisiblePassword &&
+                  <FiEyeOff onClick={() => changeVisiblePassword()} />
+                }
+              </div>
+            </div>
             <div className="divSpan">
               <span>{spanErro4}</span>
             </div>
           </div>
           <div className="divInputSpan">
-            <input
-              type="password"
-              name="text"
-              className="input"
-              placeholder="Confirm password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              value={confirmPassword}
-            />
+            <div className="divInput">
+              <input
+                type="password"
+                name="confirmPassword"
+                className="input"
+                placeholder="Confirm password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+              />
+            </div>
             <div className="divSpan">
               <span>{spanErro5}</span>
             </div>
