@@ -1,15 +1,19 @@
 import "./style.css";
 
+import { FiEyeOff } from "react-icons/fi";
+import { FiEye } from "react-icons/fi";
+
 import metadata from "../../storage.metadata.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const registerPage = () => {
 
   const navigate = useNavigate();
 
-  const [numberEmail, setNumberEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -29,33 +33,27 @@ const registerPage = () => {
   const [isDisableButton, setIsDisableButton] = useState(true);
 
   const erros = {
-    erro1: "Number or email invalid.",
-    erro2: "Another account is using the same number or email.",
+    erro1: "Email invalid.",
+    erro2: "Another account is using the same email.",
     erro3: "Write your full name",
     erro4: "This username already exists",
     erro5: "Passwords doesn't match",
   };
 
   useEffect(() => {
-    numberEmail.length > 0 && fullName.length > 0 && username.length > 0 && password.length >= 8 && confirmPassword.length >= 8
+    email.length > 0 && fullName.length > 0 && username.length > 0 && password.length >= 8 && confirmPassword.length >= 8
       ? setIsDisableButton(false) : setIsDisableButton(true)
-  }, [numberEmail, fullName, username, password, confirmPassword])
+  }, [email, fullName, username, password, confirmPassword])
 
   useEffect(() => {
-
-    var formatSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-
-    password.length >= 8 ? setLi1(styles.liEnable) : setLi1()
-    password.match(/[A-Z]/g) != null && password.match(/[a-z]/g) != null ? setLi4(styles.liEnable) : setLi4()
-    password.match(/[0-9]/g) != null ? setLi2(styles.liEnable) : setLi2()
-    password.match(formatSpecial) != null ? setLi3(styles.liEnable) : setLi3()
-
+    verifiedPassword()
   }, [password])
 
 
 
-  const verifiedNumberEmail = () => {
-      
+  const verifiedEmail = () => {
+    numberEmail.match(/[@]/)
+    numberEmail.match(/[.]/)
   };
   const verifiedFullName = () => {
 
@@ -65,22 +63,37 @@ const registerPage = () => {
   };
   const verifiedPassword = () => {
 
-  };
-  const verifiedConfirmPassword = () => {
+    var formatSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 
+    password.length >= 8 ? setLi1(styles.liEnable) : setLi1()
+    password.match(/[0-9]/g) != null ? setLi2(styles.liEnable) : setLi2()
+    password.match(formatSpecial) != null ? setLi3(styles.liEnable) : setLi3()
+    password.match(/[A-Z]/g) != null && password.match(/[a-z]/g) != null ? setLi4(styles.liEnable) : setLi4()
+
+    if (li1 && li2 && li3 && li4) {
+      return true
+    } else {
+      return false
+    }
+  };
+
+  const verifiedConfirmPassword = () => {
+    if (password == confirmPassword) {
+      setSpanErro5()
+      return true
+    } else {
+      setSpanErro5(erros.erro5)
+    }
   };
 
   const handleClickRegister = () => {
 
-    if (verifiedConfirmPassword() && verifiedPassword() && verifiedUsername() && verifiedFullName() && verifiedNumberEmail()) {
+    if (verifiedConfirmPassword() && verifiedPassword() && verifiedUsername() && verifiedFullName() && verifiedEmail()) {
       const profile = {
         name: `${fullName}`,
         username: `${username}`,
-        email: "email",
-        number: "number",
+        email: `${email}`,
         password: `${password}`,
-        verified: null,
-        status: null,
       };
 
       axios.post("http://localhost:8080/profile", profile);
@@ -101,20 +114,20 @@ const registerPage = () => {
           <img src="src/assets/imagens/NeoSyncLogo.png" alt="" />
         </div>
         <form className="formInputRegister">
-          <div className="divInput">
+          <div className="divInputSpan">
             <input
               type="text"
               name="text"
               className="input"
-              placeholder="Mobile number or email"
-              onChange={(e) => setNumberEmail(e.target.value)}
-              value={numberEmail}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
-            <div className="divInputSpan">
+            <div className="divSpan">
               <span>{spanErro1}</span>
             </div>
           </div>
-          <div className="divInput">
+          <div className="divInputSpan">
             <input
               type="text"
               name="text"
@@ -123,11 +136,11 @@ const registerPage = () => {
               onChange={(e) => setFullName(e.target.value)}
               value={fullName}
             />
-            <div className="divInputSpan">
+            <div className="divSpan">
               <span>{spanErro2}</span>
             </div>
           </div>
-          <div className="divInput">
+          <div className="divInputSpan">
             <input
               type="text"
               name="text"
@@ -136,24 +149,24 @@ const registerPage = () => {
               onChange={(e) => setUsername(e.target.value)}
               value={username}
             />
-            <div className="divInputSpan">
+            <div className="divSpan">
               <span>{spanErro3}</span>
             </div>
           </div>
-          <div className="divInput">
-            <input
-              type="password"
-              name="text"
-              className="input"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <div className="divInputSpan">
+          <div className="divInputSpan">
+              <input
+                type="password"
+                name="text"
+                className="input"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+            <div className="divSpan">
               <span>{spanErro4}</span>
             </div>
           </div>
-          <div className="divInput">
+          <div className="divInputSpan">
             <input
               type="password"
               name="text"
@@ -162,7 +175,7 @@ const registerPage = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
               value={confirmPassword}
             />
-            <div className="divInputSpan">
+            <div className="divSpan">
               <span>{spanErro5}</span>
             </div>
             <div className="divListRequestsPassword">
