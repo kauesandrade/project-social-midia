@@ -6,6 +6,8 @@ import { FiEye } from "react-icons/fi";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import InputSign from '../../components/inputSign';
+
 const loginPage = () => {
 
     const navigate = useNavigate();
@@ -13,7 +15,7 @@ const loginPage = () => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
-    const [isError, setIsError] = useState(false);
+    const [error, setError] = useState("");
     const [isDisableButton, setIsDisableButton] = useState(true);
     const [isVisiblePassword, setIsVisiblePassword] = useState(false);
 
@@ -22,7 +24,7 @@ const loginPage = () => {
     }
 
     const handleClickLogin = () => {
-        isError == false ? setIsError(true) : setIsError(false)
+        error == "" ? setError("Email or password invalid") : setError("")
     }
 
     useEffect(() => {
@@ -38,30 +40,27 @@ const loginPage = () => {
                     <img src="src/assets/imagens/NeoSyncLogo.png" alt="" />
                 </div>
                 <form className='formInputLogin'>
-                    <div className='divInputSpan'>
-                        <div className='divInput'>
-                            <input type="text" name="text" className="input" placeholder="Email" onChange={(e) => setLogin(e.target.value)} value={login} />
-                        </div>
-                    </div>
 
-                    <div className='divInputSpan'>
-                        <div className='divInput'>
-                            <input type={isVisiblePassword == true ? "text" : "password"} name="text" className="input" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
-                            <div>
-                                {isVisiblePassword &&
-                                    < FiEye onClick={() => changeVisiblePassword()} />
-                                }
-                                {!isVisiblePassword &&
-                                    <FiEyeOff onClick={() => changeVisiblePassword()} />
-                                }
-                            </div>
-                        </div>
-                        <div className='divSpan'>
-                            {isError &&
-                                <span>Email or password invalid</span>
-                            }
-                        </div>
-                    </div>
+                    <InputSign
+                        buttonEye={false}
+                        type="text"
+                        name="login"
+                        placeholder="Email"
+                        setValue={setLogin}
+                        value={login}
+                        span={''}
+                    />
+
+                    <InputSign
+                        buttonEye={true}
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        setValue={setPassword}
+                        value={password}
+                        span={error}
+                    />
+
                     <div className='divButton'>
                         <button id='buttonRegister' className='buttons' type='button' disabled={isDisableButton} onClick={() => handleClickLogin()}>Login</button>
                     </div>

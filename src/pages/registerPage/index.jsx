@@ -8,6 +8,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import InputSign from "../../components/inputSign";
+
 
 const registerPage = () => {
 
@@ -31,7 +33,6 @@ const registerPage = () => {
   const [li4, setLi4] = useState();
 
   const [isDisableButton, setIsDisableButton] = useState(true);
-  const [isVisiblePassword, setIsVisiblePassword] = useState(false);
 
   const erros = {
     erro1: "Email invalid.",
@@ -56,19 +57,15 @@ const registerPage = () => {
     password.match(/[A-Z]/g) != null && password.match(/[a-z]/g) != null ? setLi4(styles.liEnable) : setLi4()
   }, [password])
 
- const changeVisiblePassword = () =>{
-  isVisiblePassword == false ? setIsVisiblePassword(true) : setIsVisiblePassword(false)
- }
-
   const verifiedEmail = () => {
-    if(email.match(/[@]/) == null && email.match(/[.]/) == null){
+    if (email.match(/[@]/) == null && email.match(/[.]/) == null) {
       console.log("aaaaa")
       setSpanErro1(erros.erro1)
       return false
-    }else if(email){
+    } else if (email) {
       setSpanErro1(erros.erro2)
       return false
-    }else{
+    } else {
       setSpanErro1()
       return true
     }
@@ -142,100 +139,68 @@ const registerPage = () => {
           <img src="src/assets/imagens/NeoSyncLogo.png" alt="" />
         </div>
         <form className="formInputRegister">
-          <div className="divInputSpan">
-            <div className="divInput">
-              <input
-                type="email"
-                name="email"
-                className="input"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-              />
-            </div>
-            <div className="divSpan">
-              <span>{spanErro1}</span>
-            </div>
-          </div>
-          <div className="divInputSpan">
-            <div className="divInput">
-              <input
-                type="text"
-                name="fullName"
-                className="input"
-                placeholder="Full name"
-                onChange={(e) => setFullName(e.target.value)}
-                value={fullName}
-              />
-            </div>
-            <div className="divSpan">
-              <span>{spanErro2}</span>
-            </div>
-          </div>
-          <div className="divInputSpan">
 
-            <div className="divInput">
-              <input
-                type="text"
-                name="username"
-                className="input"
-                placeholder="Username"
-                onChange={(e) => setUsername(e.target.value)}
-                value={username}
-              />
-            </div>
-            <div className="divSpan">
-              <span>{spanErro3}</span>
-            </div>
+          <InputSign
+            buttonEye={false}
+            type="email"
+            name="email"
+            placeholder="Email"
+            setValue={setEmail}
+            value={email}
+            span={spanErro1}
+          />
+
+          <InputSign
+            buttonEye={false}
+            type="text"
+            name="fullName"
+            placeholder="Full name"
+            setValue={setFullName}
+            value={fullName}
+            span={spanErro2}
+          />
+
+          <InputSign
+            buttonEye={false}
+            type="text"
+            name="username"
+            placeholder="Username"
+            setValue={setUsername}
+            value={username}
+            span={spanErro3}
+          />
+
+          <InputSign
+            buttonEye={true}
+            type="password"
+            name="password"
+            placeholder="Password"
+            setValue={setPassword}
+            value={password}
+            span={spanErro4}
+          />
+
+          <InputSign
+            buttonEye={false}
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm password"
+            setValue={setConfirmPassword}
+            value={confirmPassword}
+            span={spanErro5}
+          />
+
+          <div className="divListRequestsPassword">
+            <ul>
+              <li style={li1}>minimum 8 characters</li>
+              <li style={li2}>Numbers</li>
+            </ul>
+            <ul>
+              <li style={li3}>Special character</li>
+              <li style={li4}>Uppercase and lowercase letters</li>
+            </ul>
           </div>
-          <div className="divInputSpan">
-            <div className="divInput">
-              <input
-                type={isVisiblePassword == true ? "text" : "password"}
-                name="password"
-                className="input"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
-              <div>
-                {isVisiblePassword &&
-                  < FiEye onClick={() => changeVisiblePassword()} />
-                }
-                {!isVisiblePassword &&
-                  <FiEyeOff onClick={() => changeVisiblePassword()} />
-                }
-              </div>
-            </div>
-            <div className="divSpan">
-              <span>{spanErro4}</span>
-            </div>
-          </div>
-          <div className="divInputSpan">
-            <div className="divInput">
-              <input
-                type="password"
-                name="confirmPassword"
-                className="input"
-                placeholder="Confirm password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                value={confirmPassword}
-              />
-            </div>
-            <div className="divSpan">
-              <span>{spanErro5}</span>
-            </div>
-            <div className="divListRequestsPassword">
-              <ul>
-                <li style={li1}>minimum 8 characters</li>
-                <li style={li2}>Numbers</li>
-              </ul>
-              <ul>
-                <li style={li3}>Special character</li>
-                <li style={li4}>Uppercase and lowercase letters</li>
-              </ul>
-            </div>
-          </div>
+
           <div className="divButton">
             <button className="buttons" type='button' disabled={isDisableButton} onClick={() => handleClickRegister()}>
               Register
