@@ -2,7 +2,7 @@ import './style.css';
 
 import Sidebar from '../../components/sidebar'
 import SmallPosts from '../../components/smallPosts';
-import OpenPost from '../../components/openPost';
+import OpenPost from '../../components/_tests_/openPost';
 
 const explorePage = () => {
 

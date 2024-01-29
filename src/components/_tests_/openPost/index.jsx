@@ -1,6 +1,6 @@
 import './style.css'
 
-import Carousel from '../carousel';
+import Carousel from '../../carousel';
 
 const openPost = () =>{
     <main className='mainOpenPost'>
