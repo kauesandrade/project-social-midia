@@ -17,11 +17,6 @@ const loginPage = () => {
 
     const [error, setError] = useState("");
     const [isDisableButton, setIsDisableButton] = useState(true);
-    const [isVisiblePassword, setIsVisiblePassword] = useState(false);
-
-    const changeVisiblePassword = () => {
-        isVisiblePassword == false ? setIsVisiblePassword(true) : setIsVisiblePassword(false)
-    }
 
     const handleClickLogin = () => {
         error == "" ? setError("Email or password invalid") : setError("")
