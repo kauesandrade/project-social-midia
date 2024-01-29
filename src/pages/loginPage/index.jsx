@@ -1,8 +1,5 @@
 import './style.css'
 
-import { FiEyeOff } from "react-icons/fi";
-import { FiEye } from "react-icons/fi";
-
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

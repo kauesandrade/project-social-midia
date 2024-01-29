@@ -1,8 +1,5 @@
 import "./style.css";
 
-import { FiEyeOff } from "react-icons/fi";
-import { FiEye } from "react-icons/fi";
-
 import metadata from "../../storage.metadata.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -37,7 +34,7 @@ const registerPage = () => {
   const erros = {
     erro1: "Email invalid.",
     erro2: "Another account is using the same email.",
-    erro3: "Write your full name",
+    erro3: "Write your right full name",
     erro4: "This username already exists",
     erro5: "This password isn't strong",
     erro6: "Passwords doesn't match"
@@ -72,7 +69,14 @@ const registerPage = () => {
   };
 
   const verifiedFullName = () => {
-
+    var formatSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if (fullName.match(formatSpecial) == null){
+      setSpanErro2()
+      return true
+    }else{
+      setSpanErro2(erros.erro3)
+      return false
+    }
   };
 
   const verifiedUsername = () => {
