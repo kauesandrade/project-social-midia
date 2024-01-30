@@ -2,27 +2,28 @@ import './style.css';
 
 import { IoNotificationsOffOutline } from "react-icons/io5";
 
-const conversationSelection = (props) => {
+const conversationSelection = ({srcProfileImg, profileName, status, selection, changeSelection, muted}) => {
 
     const handleClickConversation = () =>{
-        {props.changeSelection()}
+        changeSelection()
     }
 
     return (
 
-        <div className={props.selection} onClick={ () => handleClickConversation()}>
+        <div className={selection} onClick={ () => handleClickConversation()}>
             <div className='divItensConversations'>
                 <div className='divConversationsImgName'>
-                    <img className='imgConversationsProfile' src={props.srcProfileImg} alt="Profile Photo" />
+                    <img className='imgConversationsProfile' src= {srcProfileImg} alt="Profile Photo" />
                     <div>
-                        <p>{props.profileName}</p>
-                        <p className='pConvesationStatus'>{props.status}</p>
+                        <p>{profileName}</p>
+                        <p className='pConvesationStatus'>{status}</p>
                     </div>
                 </div>
 
                 <div>
-                    {/* can be a icon mute */}
+                    {muted &&
                     <IoNotificationsOffOutline />
+                    }
                 </div>
             </div>
         </div>

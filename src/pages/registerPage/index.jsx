@@ -56,13 +56,14 @@ const registerPage = () => {
 
   const verifiedEmail = () => {
     if (email.match(/[@]/) == null && email.match(/[.]/) == null) {
-      console.log("aaaaa")
       setSpanErro1(erros.erro1)
       return false
-    } else if (email) {
-      setSpanErro1(erros.erro2)
-      return false
-    } else {
+    } 
+    // else if (email) {
+    //   setSpanErro1(erros.erro2)
+    //   return false
+    // } 
+    else {
       setSpanErro1()
       return true
     }
@@ -118,6 +119,7 @@ const registerPage = () => {
     verifiedConfirmPassword()
 
     if (verifiedEmail() && verifiedFullName() && verifiedUsername() && verifiedPassword() && verifiedConfirmPassword()) {
+      console.log("cu")
       const profile = {
         name: `${fullName}`,
         username: `${username}`,

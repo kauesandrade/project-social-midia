@@ -6,20 +6,11 @@ import Sidebar from '../../components/sidebar'
 // import Highlight from '../../components/testing/highlight';
 // import Highlights from '../../components/testing/highlights';
 import SmallPosts from '../../components/smallPosts';
+import NavbarProfile from '../../components/navbarProfile';
 
 // import useProfileData from '../../hooks/useProfileData';
 
 import metadata from '../../storage.metadata.json';
-
-
-import { MdBookmarkBorder } from "react-icons/md";
-import { MdOutlineBookmark } from "react-icons/md";
-import { BsFillGridFill } from "react-icons/bs";
-import { BsGrid } from "react-icons/bs";
-import { BsFillFilePersonFill } from "react-icons/bs";
-import { BsFilePerson } from "react-icons/bs";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa6";
 
 import { PiSealCheckDuotone } from "react-icons/pi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
@@ -49,16 +40,13 @@ const profilePage = () => {
 
             <main className='mainProfilePage'>
                 <section className='sectionProfileInformations'>
-                    {/* Perfil infomacoes */}
                     <div className='divInformationImage'>
-                        {/* informacoes e imagem de perfil*/}
                         <div className='divProfileNameButtons flex topProfileName'>
                             <div className='divProfileName flex'>
                                 <p>{profile?.name}</p>
                                 {profile?.verified && (
                                     <PiSealCheckDuotone className='iconVerify' />
                                 )}
-
                             </div>
                             <div className='divButtons flex'>
                                 <button className='buttonsProfile'> Follow </button>
@@ -68,7 +56,6 @@ const profilePage = () => {
                         </div>
                         <div>
                             <img className='imgProfile' src="src/assets/imagens/profile.jpg" alt="Profile Photo" />
-                            {/* imagen de perfil */}
                         </div>
                         <div className='divInformations'>
                             <div className='divProfileNameButtons flex buttonProfileName'>
@@ -104,7 +91,6 @@ const profilePage = () => {
                             <div>
                                 <p>followed by <span className='fontBold'>kauesandrade, daviBiwerk</span> and <span className='fontBold'>22 others</span></p>
                             </div>
-                            {/* informacoes */}
                         </div>
                     </div>
                     {/* <div className='divHighlights'>
@@ -121,58 +107,12 @@ const profilePage = () => {
                     </div> */}
                 </section>
                 <section className='sectionProfilePosts'>
-                    {/* publicacoes */}
-                    <nav className='navProfilePosts'>
-                        {/* navBar */}
-                        <div className='divSelectionPosts flex' onClick={() => hadleClickSelection('posts')}>
-                            {/* posts */}
-                            {selection == 'posts' && (
-                                <>
-                                    <BsFillGridFill className='iconsPost selection' />
-                                    <p className='selection'>Posts</p>
-                                </>
-                            )}
-                            {selection != 'posts' && (
-                                <>
-                                    <BsGrid className='iconsPost' />
-                                    <p>Posts</p>
-                                </>
-                            )}
+                    
+                    <NavbarProfile 
+                    selection = {selection}
+                    hadleClickSelection = {hadleClickSelection}
+                    />
 
-                        </div>
-                        <div className='divSelectionPosts flex' onClick={() => hadleClickSelection('mentions')}>
-                            {/* mention */}
-                            {selection == 'mentions' && (
-                                <>
-                                    <BsFillFilePersonFill className='iconsPost selection' />
-                                    <p className='selection'>Mentions</p>
-                                </>
-                            )}
-                            {selection != 'mentions' && (
-                                <>
-                                    <BsFilePerson className='iconsPost' />
-                                    <p>Mentions</p>
-                                </>
-                            )}
-
-                        </div>
-                        <div className='divSelectionPosts flex' onClick={() => hadleClickSelection('saves')}>
-                            {/* saves */}
-                            {selection == 'saves' && (
-                                <>
-                                    <MdOutlineBookmark className='iconsPost selection' />
-                                    <p className='selection'>Saves</p>
-                                </>
-                            )}
-                            {selection != 'saves' && (
-                                <>
-                                    <MdBookmarkBorder className='iconsPost' />
-                                    <p>Saves</p>
-                                </>
-                            )}
-
-                        </div>
-                    </nav>
                     <div>
 
                         {selection == 'posts' && (
