@@ -8,7 +8,7 @@ import Sidebar from '../../components/sidebar'
 import SmallPosts from '../../components/smallPosts';
 import NavbarProfile from '../../components/navbarProfile';
 
-// import useProfileData from '../../hooks/useProfileData';
+import useProfileData from '../../hooks/useProfileData';
 
 import metadata from '../../storage.metadata.json';
 
@@ -23,7 +23,13 @@ const profilePage = () => {
     const [id, setId] = useState();
 
     useEffect(() => {
-        axios.get(metadata.API.API_URL + "/profile/1").then((response) => setProfile(response.data))
+        const fetchData = async () => {
+            const profileData = await useProfileData();
+            console.log(profileData);
+            setProfile(profileData);
+        };
+
+        fetchData();
     }, []);
 
     // const [isVerify, setIsVerify] = useState() //props de verificado 
