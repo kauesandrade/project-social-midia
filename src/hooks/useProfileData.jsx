@@ -5,7 +5,7 @@ const API_URL = "http://localhost:8080"
 
 const fetchApi = async () => {
 
-    axios.get(API_URL + "/profile/1").then((response) => {
+    await axios.get(API_URL + "/profile/1").then((response) => {
         return response.data
     })
     

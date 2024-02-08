@@ -22,11 +22,9 @@ const profilePage = () => {
     const [profile, setProfile] = useState({});
     const [id, setId] = useState();
 
-    useEffect(() => {
+    useEffect(()  => {
         const fetchData = async () => {
-            const profileData = await useProfileData();
-            console.log(profileData);
-            setProfile(profileData);
+           await useProfileData().then((response) => console.log(setProfile(response)));
         };
 
         fetchData();
